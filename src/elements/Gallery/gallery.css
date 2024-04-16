@@ -1,0 +1,7 @@
+.galleryNavButton{
+    width: 29px;
+    height: 9px;
+    background: rgba(217, 217, 21, 60);
+    border-radius: 7.5px;
+    cursor: pointer;
+}
