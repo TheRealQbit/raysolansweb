@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla');
+.portada{
+    max-width: 900px;
+    height: 100%; /* Ensures the image scales down if the container is smaller */
+    width: auto; /* Maintains the aspect ratio of the image */
+    align: center;
+}
+.seccion-titulo{
+    font-family: "Familjen Grotesk";
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding-top: 10px;
+}
+.seccion-tipo{
+    font-family: "Tiro Bangla";
+    font-size: 20px;
+    color: white;
+    padding-top: 10px;
+}
+.mini-gallery-image{
+    height: 183px;
+    width: 455px;
+    object-fit: cover;
+    padding: .2rem;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+.mini-gallery-image:hover{
+    width: 465px;
+    height: 244px;
+}

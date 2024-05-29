@@ -1,6 +1,6 @@
 .gradient {
     position: absolute; /* Use absolute positioning */
-    width: 100vw; /* Full viewport width */
+    width: 100%; /* Full viewport width */
     height: 38vh; /* 38% of viewport height */
     background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%);
 }
