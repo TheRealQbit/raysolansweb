@@ -1,7 +1,17 @@
 [
   {
-    "nombre": "Capital people",
+    "nombre": "Afrika Bambata",
     "tipo": "RETRATOS",
-    "imagenes": ["./assets/CAPITAL PEOPLE/08..23.LX.SHANGAI.NEW KID ON THE BLOCK.jpg", "./assets/CAPITAL PEOPLE/16.07.NK.MEXICO.DF.HOMELESS 06.jpeg", "./assets/CAPITAL PEOPLE/_RAY9451.jpg", "./assets/CAPITAL PEOPLE/HIPNOTIC EYES copia.jpg"]
+    "imagenes": ["./assets/AFRIKA BAMBATA/Tanganika.16.0053 copia.jpg", "./assets/AFRIKA BAMBATA/_RAY9325.jpg", "./assets/AFRIKA BAMBATA/RAY.SOLANS© 2014.WEB010 copia.jpg", "./assets/AFRIKA BAMBATA/Tanganika.16.0053 copia.jpg"]
+  },
+  {
+    "nombre": "Havana Vella",
+    "tipo": "POR DETERMINAR",
+    "imagenes": ["./assets/HAVANA VELLA/RAY.SOLANS© 2014.WEB124.jpg", "./assets/HAVANA VELLA/11.10.NK.HAVANA VIEJA 57.jpeg", "./assets/HAVANA VELLA/RAY.SOLANS© 2014.WEB174.jpg", "./assets/HAVANA VELLA/RAY.SOLANS© 2014.WEB122.jpg"]
+  },
+  {
+    "nombre": "中国",
+    "tipo": "POR DETERMINAR",
+    "imagenes": ["./assets/中国/24.01.SY.PEK. MARKET 21.jpeg", "./assets/中国/24.01.SY.PEK.IMP PALC. GIRL 03.01.jpeg", "./assets/中国/24.01.SY.PEK.J & J 08.jpeg", "./assets/中国/23.10.SY,QUIN PALACE TIGER.jpeg"]
   }
 ]

@@ -1,6 +1,133 @@
+:root{
+    --animation-slow: all .9s cubic-bezier(.7, 0, .3, 1);
+    --color-dark-dark: #141517
+}
 .gradient {
     position: absolute; /* Use absolute positioning */
     width: 100%; /* Full viewport width */
     height: 38vh; /* 38% of viewport height */
     background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%);
+}
+h1 {
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 10vh;
+}
+.gallery {
+    height: 80vh;
+}
+.coso {
+    height: fit-content;
+    width: fit-content;
+    position: absolute
+}
+.fixed-nav-rounded-div {
+    position: absolute;
+    left: 1px;
+    transform: translateX(-100%);
+    height: 100%;
+    top: 0;
+}
+.fixed-nav-rounded-div .rounded-div-wrap {
+    width: 6vw;
+    height: 100%;
+    transition: var(--animation-slow);
+    transition: all .85s cubic-bezier(.7, 0, .2, 1);
+    will-change: width;
+}
+.rounded-div-wrap {
+    width: 100%;
+    top: 0;
+    position: relative;
+    height: 10vh;
+    overflow: hidden;
+}
+.fixed-nav-rounded-div .rounded-div-wrap .rounded-div {
+    background: var(--color-dark);
+    height: 150%;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 775%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-6.5%, -50%);
+}
+.rounded-div {
+    width: 150%;
+    content: "";
+    display: block;
+    position: absolute;
+    background: var(--color-white);
+    height: 750%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -86.666%);
+    z-index: 1;
+}
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 800;
+    pointer-events: none;
+    background: transparent;
+}
+.loading-screen, .loading-container .rounded-div-wrap.top .rounded-div, .loading-container .rounded-div-wrap.bottom .rounded-div {
+    background: var(--color-dark-dark);
+}
+.loading-screen {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    will-change: top;
+    top: calc(-100%);
+}
+.loading-container .rounded-div-wrap.top {
+    top: 0;
+    position: absolute;
+    transform: translateY(-99%) scale(1, -1);
+    z-index: 2;
+    height: 0vh;
+    will-change: height;
+}
+.rounded-div-wrap {
+    width: 100%;
+    top: 0;
+    position: relative;
+    height: 10vh;
+    overflow: hidden;
+}
+.loading-container .rounded-div-wrap.bottom {
+    top: unset;
+    bottom: 0;
+    position: absolute;
+    transform: translateY(99%);
+    z-index: 2;
+    height: 0vh;
+    will-change: height;
+}
+.rounded-div-wrap {
+    width: 100%;
+    top: 0;
+    position: relative;
+    height: 10vh;
+    overflow: hidden;
+}
+.loading-words{
+    position: absolute;
+    font-size: 8rem;    
+    text-align: center;
+    align-self: center;
+    top: 40vh;
+    left: 50vh;
+    opacity: 1;
+    display: block;
+    color:aliceblue
 }

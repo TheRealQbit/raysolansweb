@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk');
 @import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla');
 .portada{
-    max-width: 900px;
+    max-width: 70vh;
     height: 100%; /* Ensures the image scales down if the container is smaller */
     width: auto; /* Maintains the aspect ratio of the image */
     align: center;
