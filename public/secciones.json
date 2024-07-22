@@ -2,16 +2,28 @@
   {
     "nombre": "Afrika Bambata",
     "tipo": "RETRATOS",
-    "imagenes": ["./assets/AFRIKA BAMBATA/Tanganika.16.0053 copia.jpg", "./assets/AFRIKA BAMBATA/_RAY9325.jpg", "./assets/AFRIKA BAMBATA/RAY.SOLANS© 2014.WEB010 copia.jpg", "./assets/AFRIKA BAMBATA/Tanganika.16.0053 copia.jpg"]
+    "imagenes": ["./assets/AFRIKA BAMBATA/Tanganika.16.0053 copia.jpg", "./assets/AFRIKA BAMBATA/_RAY9325.jpg", "./assets/AFRIKA BAMBATA/RAY.SOLANS© 2014.WEB010 copia.jpg", "./assets/AFRIKA BAMBATA/Tanganika.16.0053 copia.jpg"],
+    "descripcion": "Afrika Bambata es un proyecto fotográfico que nace de la necesidad de mostrar la belleza de la gente de África. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser.",
+    "fecha": "2016",
+    "lugar": "Tanganika",
+    "tipoGalería": [1,0,1,0]
   },
   {
     "nombre": "Havana Vella",
     "tipo": "POR DETERMINAR",
-    "imagenes": ["./assets/HAVANA VELLA/RAY.SOLANS© 2014.WEB124.jpg", "./assets/HAVANA VELLA/11.10.NK.HAVANA VIEJA 57.jpeg", "./assets/HAVANA VELLA/RAY.SOLANS© 2014.WEB174.jpg", "./assets/HAVANA VELLA/RAY.SOLANS© 2014.WEB122.jpg"]
+    "imagenes": ["./assets/HAVANA VELLA/RAY.SOLANS© 2014.WEB124.jpg", "./assets/HAVANA VELLA/11.10.NK.HAVANA VIEJA 57.jpeg", "./assets/HAVANA VELLA/RAY.SOLANS© 2014.WEB174.jpg", "./assets/HAVANA VELLA/RAY.SOLANS© 2014.WEB122.jpg"],
+    "descripcion": "Havana Vella es un proyecto fotográfico que nace de la necesidad de mostrar la belleza de la gente de África. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser.",
+    "fecha": "2016",
+    "lugar": "Tanganika",
+    "tipoGalería": [1,0,1,0]
   },
   {
     "nombre": "中国",
     "tipo": "POR DETERMINAR",
-    "imagenes": ["./assets/中国/24.01.SY.PEK. MARKET 21.jpeg", "./assets/中国/24.01.SY.PEK.IMP PALC. GIRL 03.01.jpeg", "./assets/中国/24.01.SY.PEK.J & J 08.jpeg", "./assets/中国/23.10.SY,QUIN PALACE TIGER.jpeg"]
+    "imagenes": ["./assets/中国/24.01.SY.PEK. MARKET 21.jpeg", "./assets/中国/24.01.SY.PEK.IMP PALC. GIRL 03.01.jpeg", "./assets/中国/24.01.SY.PEK.J & J 08.jpeg", "./assets/中国/23.10.SY,QUIN PALACE TIGER.jpeg"],
+    "descripcion": "Havana Vella es un proyecto fotográfico que nace de la necesidad de mostrar la belleza de la gente de África. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser.",
+    "fecha": "2016",
+    "lugar": "Tanganika",
+    "tipoGalería": [1,0,1,0]
   }
 ]

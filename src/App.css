@@ -6,7 +6,7 @@
     position: absolute; /* Use absolute positioning */
     width: 100%; /* Full viewport width */
     height: 38vh; /* 38% of viewport height */
-    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(255,255,255,0) 100%);
 }
 h1 {
     color: white;
@@ -130,4 +130,23 @@ h1 {
     opacity: 1;
     display: block;
     color:aliceblue
+}
+.main-section-image {
+    width: 100vw;
+    height: 80vh;
+    object-fit: cover;
+    object-position: center;
+    left: 0rem;
+    top: 0rem;
+}
+.main-section-image-div {
+    position: absolute;
+    height: 80vh;
+    top: 0rem;    
+}
+.main-section-image-gradient {
+    position: absolute; /* Use absolute positioning */
+    width: 100%; /* Full viewport width */
+    height: 90vh; /* 38% of viewport height */
+    background: linear-gradient(180deg, rgb(0, 0, 0) -90%, rgba(255,255,255,0) 100%);
 }

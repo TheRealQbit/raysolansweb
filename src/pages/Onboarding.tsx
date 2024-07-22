@@ -24,6 +24,8 @@ export default function Onboarding() {
             }
             t1.set(".loading-screen", { 
                 top: "0",
+            }).set(".title",{
+                opacity: 0
             }).to(".loading-screen", {
                 duration: .8,
                 top: "-100%",
@@ -35,6 +37,11 @@ export default function Onboarding() {
                 ease: "Power4.easeInOut"
             },"=-.8").set(".loading-screen", { 
                 top: "calc(-100%)" 
+            }).to(".title",{
+                opacity: 1,
+                duration: 1,
+                ease: "Power4.easeInOut",
+                delay: .8
             }).set(".loading-screen .rounded-div-wrap.bottom", { 
                 height: "0vh"
             })

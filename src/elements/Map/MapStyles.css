@@ -1,0 +1,12 @@
+.map-container {
+    position: relative;
+    background-color: black;
+}
+
+.leaflet-container {
+    background-color: black; /* Set the map background color */
+}
+
+.leaflet-popup {
+    background-color: white; /* Optional: Customize popup style */
+}

@@ -3,8 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Onboarding from './pages/Onboarding'
 import {AnimatePresence} from "framer-motion";
-import CapitalPeople from "./pages/CapitalPeople";
-import SectionPage from "./pages/CapitalPeople";
+import SectionPage from "./pages/SectionPage";
 
 function App() {
   const [data, setData] = useState([]);

@@ -26,7 +26,7 @@ function Section() {
             })
             .then((data) => setData(data))
             .catch((error) => console.error('Error fetching data:', error));
-    }, []);
+    }, []); 
     return(
         <div className="pt-20">
             <ul>
