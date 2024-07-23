@@ -50,10 +50,13 @@ export default function Onboarding() {
         return() => ctx.revert()
     }, [])
     return (
-            <div className='bg-black relative' ref={comp} >
+            <div className='bg-black relative w-screen' ref={comp} >
                 <div className='loading-container'>
                     <div className='loading-screen' id="loading-screen">
-                        <text className='loading-words'>RAY SOLANS</text>
+                        <div className='flex flex-row gap-5 items-center'>
+                            <text className='r'>R</text>
+                            <text className='loading-words'>ay Solans</text>
+                        </div>
                         <div className='rounded-div-wrap top'>
                             <div className='rounded-div'></div>                                
                         </div>

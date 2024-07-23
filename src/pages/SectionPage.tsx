@@ -1,8 +1,23 @@
 import React, { useLayoutEffect , useRef } from 'react';
-import gsap from 'gsap';
+import gsap, { random } from 'gsap';
 import { NavBar } from "../elements/NavBar/NavBar";
 import { ImageType1, ImageType2 } from '../elements/Gallery/displays';
 
+const SectionGallery = ({props}) => {
+    if(props.video != '') {
+        return(<video autoPlay loop muted className='main-section-image'>
+            <source src={props.video} type='video/mp4'/>
+        </video>)
+        
+    } else{
+        let random = Math.random() * (props.imagenes.length - 1)
+        random = Math.floor(random)
+        return(
+        <img src={props.imagenes[random]} className='main-section-image'/>
+    )
+        
+    }
+}
 export default function SectionPage({props}) {
     const comp = useRef(null);
     useLayoutEffect(() => {
@@ -46,10 +61,13 @@ export default function SectionPage({props}) {
         return() => ctx.revert()
     }, [])
     return(
-        <div className='bg-black' ref={comp}>
+        <div className='bg-black w-screen' ref={comp}>
             <div className='loading-container'>
                     <div className='loading-screen' id="loading-screen">
-                        <text className='loading-words'>{props.nombre}</text>
+                    <div className='flex flex-row gap-5 items-center'>
+                                <text className='r'>{props.nombre.substring(0,1)}</text>
+                                <text className='loading-words'>{props.nombre.substring(1)}</text>
+                    </div>
                         <div className='rounded-div-wrap top'>
                             <div className='rounded-div'></div>                                
                         </div>
@@ -62,16 +80,16 @@ export default function SectionPage({props}) {
                 <NavBar/>
                 <div className='main-section-image-div'>
                     <div className='main-section-image-gradient'/>
-                    <img src={props.imagenes[0]} className='main-section-image'/>
+                    <SectionGallery props={props}/>                    
                     <h1 className='absolute inset-x-0 bottom-10 text-center text-8xl'>{props.nombre}</h1>
-                    <div className='flex flex-col items-center relative bg-black'>
+                    <div className='flex flex-col items-stretch relative bg-black'>
                         <h1 className='text-white p-0 pl-20 pt-32 pr-80 h-96 text-3xl text-left'>{props.descripcion}</h1>
                         {props.imagenes.map((item, index) => (
                                 <div key={index}>
                                     {props.tipoGalería[index] === 1 ? (
-                                        <ImageType1 image={item} />
+                                        <ImageType1 image={item} text={props.tags[index]} />
                                     ) : (
-                                        <ImageType2 image={item} />
+                                        <ImageType2 image={item} text={props.tags[index]}/>
                                     )}
                                 </div>
                             ))}

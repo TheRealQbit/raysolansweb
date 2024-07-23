@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono');
 :root{
     --animation-slow: all .9s cubic-bezier(.7, 0, .3, 1);
     --color-dark-dark: #141517
@@ -7,6 +8,7 @@
     width: 100%; /* Full viewport width */
     height: 38vh; /* 38% of viewport height */
     background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(255,255,255,0) 100%);
+    z-index: 2;
 }
 h1 {
     color: white;
@@ -120,16 +122,50 @@ h1 {
     height: 10vh;
     overflow: hidden;
 }
-.loading-words{
-    position: absolute;
-    font-size: 8rem;    
+.loading-words{ 
+    position: relative;
+    font-size: 8rem;
+    font-family: Oxygen Mono;    
     text-align: center;
     align-self: center;
     top: 40vh;
     left: 50vh;
     opacity: 1;
     display: block;
-    color:aliceblue
+    color:whitesmoke
+    
+}
+.r{
+    transform: scaleX(-1);
+    position: relative;
+    font-size: 8rem;
+    font-family: Oxygen Mono;    
+    text-align: center;
+    align-self: center;
+    top: 40vh;
+    left: 50vh;
+    opacity: 1;
+    display: block;
+    color:whitesmoke
+}
+.biography-name{
+    font-size: 8rem;
+    font-weight: bold;    
+    text-align: center;
+    align-self: center;
+    display: block;
+    color:white;
+    z-index: 10;
+}
+.biography-name-r{
+    transform: scaleX(-1);
+    font-size: 8rem;
+    font-weight: bold;    
+    text-align: center;
+    align-self: center;
+    display: block;
+    color:white;
+    z-index: 10;
 }
 .main-section-image {
     width: 100vw;
@@ -138,6 +174,7 @@ h1 {
     object-position: center;
     left: 0rem;
     top: 0rem;
+    z-index: 10;
 }
 .main-section-image-div {
     position: absolute;
@@ -149,4 +186,26 @@ h1 {
     width: 100%; /* Full viewport width */
     height: 90vh; /* 38% of viewport height */
     background: linear-gradient(180deg, rgb(0, 0, 0) -90%, rgba(255,255,255,0) 100%);
+}
+.ray-image-background {
+    position: absolute;
+    height: 100vh;
+    width: 70rex;
+    object-fit: cover;
+    object-position: right;
+    z-index: 1;
+}
+.ray-image-subject {
+    position: absolute;
+    height: 100vh;
+    object-fit: cover;
+    object-position: right;
+    z-index: 10;
+}
+.ray-image-light {
+    position: absolute;
+    height: 100vh;
+    object-fit: cover;
+    object-position: right;
+    z-index: 10;
 }
