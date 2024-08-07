@@ -1,4 +1,4 @@
-import React, { useLayoutEffect , useRef } from 'react';
+import { useLayoutEffect , useRef } from 'react';
 import gsap from 'gsap';
 import Gallery from '../elements/Gallery/gallery';
 import IGallery1 from '../../public/assets/RaySolans_Onboarding_IGallery_1.jpg';
@@ -10,7 +10,7 @@ export default function Onboarding() {
     const imgArray = [IGallery1, IGallery2, IGallery3];
     const comp = useRef(null);
     useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
+        const ctx = gsap.context(() => {
             const t1 = gsap.timeline()
 
             if (window.innerWidth > 540) { 
@@ -68,7 +68,7 @@ export default function Onboarding() {
                 <div id="Page">
                     <NavBar />
                     <div className='gradient'/>
-                    <Gallery imgArray={imgArray} imgCount={imgArray.length} />
+                    <Gallery imgArray={imgArray}/>
                     <div className='flex flex-col items-center'>
                         <div className='flex flex-row gap-40 items-center bg-black pt-10 px-20'>
                             <div className='flex flex-col justify-center'>
@@ -76,10 +76,10 @@ export default function Onboarding() {
                                     IMÁGENES
                                 </text>
                                 <text className='text-white text-4xl'>
-                                    con un significado que
+                                    que
                                 </text>
                                 <text className='text-white text-9xl font-bold'>
-                                    TRANSCIENDE
+                                    TRANSCIENDEN
                                 </text>
                             </div>
                             <text className='text-white text-xl self-start'>

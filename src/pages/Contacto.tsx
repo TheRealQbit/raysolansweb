@@ -1,17 +1,17 @@
-import React, { useLayoutEffect , useRef } from 'react';
+import { useLayoutEffect , useRef } from 'react';
 import gsap from 'gsap';
 
 import subject from '/assets/Ray/Subject.png';
 import bg from '/assets/Ray/bg.png';
 import { NavBar } from '../elements/NavBar/NavBar';
-import Form from '../elements/Forms/Forms';
+import Contact from '../elements/Forms/Forms';
 export default function Contacto() {
     const comp = useRef(null);
     useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
+        const ctx = gsap.context(() => {
             const t1 = gsap.timeline()
             
-            let h1 = document.querySelector('h1')
+            const h1 = document.querySelector('h1')
             if (window.innerWidth > 540) { 
                 t1.set(".loading-screen .rounded-div-wrap.bottom", { 
                   height: "10vh",
@@ -32,6 +32,9 @@ export default function Contacto() {
             }).set(".formInput", { 
                 transform: "translateY(-2rem)",
                 width: "30vw",
+                opacity: 0,
+            }).set(".center",{
+                transform: "translateY(-2rem)",
                 opacity: 0,
             }).to(".loading-screen", {
                 duration: .8,
@@ -57,6 +60,11 @@ export default function Contacto() {
                 transform: "translateX(0rem)",
                 ease: "Power4.easeInOut",
             },"start").to(".formInput", {
+                duration: .8,
+                transform: "translateY(0rem)",
+                opacity: 1,
+                ease: "Power4.easeInOut",
+            }).to(".center", {
                 duration: .8,
                 transform: "translateY(0rem)",
                 opacity: 1,
@@ -87,14 +95,13 @@ export default function Contacto() {
                 <div className='gradient'/>
                 <div className='h-screen'>                    
                     <div className='flex flex-col items-end '>
-                        <img src={bg} alt='bg' className='ray-image-background'/>
-                        <img src={subject} alt='subject' className='ray-image-subject'/>
+                        <img loading='lazy' src={bg} alt='bg' className='ray-image-background'/>
+                        <img loading='lazy' src={subject} alt='subject' className='ray-image-subject'/>
                     </div>
-                    <h1 className='absolute pl-96 pt-56 text-white text-9xl font-bold z-10'>Trabajemos</h1>
-                    <div className='absolute pl-96 pt-96'>
-                        <Form /> 
-                    </div>
-                      
+                    <h1 className='contact-form-text'>Trabajemos</h1>
+                    <div className='contact-form'>
+                        <Contact/>
+                    </div>                      
                 </div> 
                            
             </div>

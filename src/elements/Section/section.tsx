@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import "./section.css";
 import {Link} from "react-router-dom";
+import { Item } from '../../App';
 
-const Minigallery = ({props}) => {
+interface MinigalleryProps {
+    images: string[];
+}
+const Minigallery: React.FC<MinigalleryProps> = ({images}) => {
     return(
         <div className="">
             <div className="flex flex-row items-center p-12 h-72">
-                <img src={props[0]} className="mini-gallery-image"/>
-                <img src={props[1]} className="mini-gallery-image"/>
-                <img src={props[2]} className="mini-gallery-image"/>
-                <img src={props[3]} className="mini-gallery-image"/>
+                <img src={images[0]} loading='lazy' className="mini-gallery-image"/>
+                <img src={images[1]} loading='lazy' className="mini-gallery-image"/>
+                <img src={images[2]} loading='lazy' className="mini-gallery-image"/>
+                <img src={images[3]} loading='lazy' className="mini-gallery-image"/>
             </div>
         </div>
     )
 }
 function Section() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<Item[]>([]);
     useEffect(()=>{
         fetch('./secciones.json')
             .then((response) => {
@@ -26,7 +30,7 @@ function Section() {
             })
             .then((data) => setData(data))
             .catch((error) => console.error('Error fetching data:', error));
-    }, []); 
+    }, []);
     return(
         <div className="pt-20">
             <ul>
@@ -37,7 +41,7 @@ function Section() {
                            <img src={item.imagenes[1]} className="portada"/>
                            <h2 className="text-white text-sm pt-2">{item.tipo}</h2>
                            <h1 className="seccion-titulo">{item.nombre}</h1>
-                           <Minigallery props={item.imagenes}/>
+                           <Minigallery images={item.imagenes}/>
                        </div>
                    </Link>
                </li>

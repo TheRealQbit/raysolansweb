@@ -1,4 +1,4 @@
-import React, {useEffect, useState,} from 'react'
+import {useEffect, useState,} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Onboarding from './pages/Onboarding'
@@ -7,7 +7,18 @@ import SectionPage from "./pages/SectionPage";
 import Contacto from './pages/Contacto';
 import ScrollToTop from './elements/scrolltotop';
 import Biografia from './pages/Biografía';
-
+export interface Item {
+  nombre: string;
+  tipo: string;
+  imagenes: string[];  
+  imagen: string;
+  descripcion: string;
+  fecha: string;
+  lugar: string;
+  tipoGalería: Int8Array[];
+  tags: string[];
+  video: string;
+}
 function App() {
   const [data, setData] = useState([]);
   useEffect(()=>{
@@ -29,8 +40,8 @@ function App() {
             <Routes>
               <Route index element={<Onboarding />} />
               <Route path="/home" element={<Onboarding />}/>
-              {data.map((item,index) => (
-                  <Route path={`/${item.nombre}`} element={<SectionPage props={item}/>}/>
+              {data.map((item: Item) => (
+                  <Route path={`/${item.nombre}`} element={<SectionPage {...item}/>}/>
               ))}
               <Route path="/contact" element={<Contacto/>}/>
               <Route path="/bio" element={<Biografia/>}/>
@@ -41,4 +52,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

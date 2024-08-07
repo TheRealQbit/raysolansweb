@@ -1,10 +1,12 @@
-import {useState} from 'react';
-import GalleryNavigation from './NavBar/galleryNavigation';
-const Gallery = ({imgCount, imgArray}) => {
-    const [currentImg, setCurrentImg] = useState(0);
+interface GalleryProps {
+    imgArray: string[];
+}
+const Gallery = ({imgArray}:GalleryProps) => {
+    let random = Math.random() * (imgArray.length - 1)
+        random = Math.floor(random)
     return (
         <div className=''>          
-            <img src={imgArray[currentImg]} alt='gallery' className='h-screen object-cover w-full'/>
+            <img src={imgArray[random]} alt='gallery' loading='lazy'className='h-screen object-cover w-full'/>
             <div className='h-fit w-fit absolute'>
             </div>
         </div>

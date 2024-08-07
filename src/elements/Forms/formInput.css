@@ -12,8 +12,21 @@ input{
     height: 5rem;
     background: rgba(255, 255, 255, 0) 100%;
 }
-
-
+input text{
+    color: whitesmoke
+}
+textarea{
+    padding: 15px;
+    margin: 10px 0px;
+    height: 5rem;
+    background: rgba(255, 255, 255, 0) 100%;
+}
+textarea:focus, input:focus{
+    color: whitesmoke;
+}
+textarea:out-of-range, input:out-of-range{
+    color: grey;
+}
 label{
     font-size: 1rem;
     font-weight: bold;
@@ -38,10 +51,6 @@ input:invalid[focused="true"] ~ span{
     display: block;
 }
 
-input:scope{
-    color:aliceblue
-}
-
 
 
 .format {
@@ -49,3 +58,12 @@ input:scope{
     justify-content: space-between;
     flex-direction: column;
 }
+.format2 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
+    position:relative;
+    width: 40vw;
+}
+

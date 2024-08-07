@@ -190,7 +190,7 @@ h1 {
 .ray-image-background {
     position: absolute;
     height: 100vh;
-    width: 70rex;
+    width: 30vw;
     object-fit: cover;
     object-position: right;
     z-index: 1;
@@ -207,5 +207,20 @@ h1 {
     height: 100vh;
     object-fit: cover;
     object-position: right;
+    z-index: 10;
+}
+
+.contact-form{
+    position:absolute;
+    padding-left: 20vw;
+    padding-top: 38vh;
+}
+.contact-form-text{
+    position:absolute;
+    padding-left: 20vw;
+    padding-top: 20vh;
+    color:white;
+    font-size: 8rem;
+    font-weight: bold;
     z-index: 10;
 }

@@ -1,5 +1,6 @@
 import "../gallery.css";
-const GalleryNavigation = ({imgCount, setCurrentImg, currentImg}) => {
+
+const GalleryNavigation = () => {
     return (  
         <div className="m-100 m-120 mt-270 content-center">  
             <div>

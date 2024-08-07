@@ -1,22 +1,28 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import Popup from './Popup';
 
-const ImageType1 = ({ image, text }) => {
-    return (
-        <div className="flex flex-row items-center justify-between p-5 h-96 w-full bg-black">
-            <img src={image} className="h-full w-auto hover:pl-2 transition-all" />
-            <h1 className="text-white text-3xl font-bold pr-2 text-wrap text-right hover:pr-8 transition-all">{text}
-                rthr
-            </h1>
-        </div>
-        
-    )
+interface GalleryProps {
+    images: string[];
 }
-const ImageType2 = ({ image, text }) => {
+const Display: React.FC<GalleryProps> = ({ images }) => {
+
+    const array1 = images.filter((_, index) => index % 2 === 0);
+    const array2 = images.filter((_, index) => index % 2 !== 0);
     return (
-        <div className="flex flex-row items-center justify-between p-5 h-96 w-full bg-black">
-            <h1 className="text-white text-3xl font-bold pl-2 text-wrap text-right hover:pl-8 transition-all">{text}</h1>
-            <img src={image} className="h-full w-auto hover:pr-2 transition-all" />            
+        <div>
+            <div className='flex flex-row items-stretch relative bg-black w-screen'>
+                <div className='w-1/2 flex flex-col items-end' >
+                {array1.map((image, index) => (
+                    <Popup key={index} image={image} index={index} />               
+                ))}
+                </div>
+                <div className='w-1/2 flex flex-col items-start'>
+                {array2.map((image, index) => (
+                    <Popup key={index} image={image} index={index} />                     
+                ))}
+                </div>
+            </div>
         </div>
-    )
+    );
 }
-export {ImageType1, ImageType2};
+export {Display};

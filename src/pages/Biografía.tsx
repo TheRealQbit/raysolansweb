@@ -1,4 +1,4 @@
-import React, { useLayoutEffect , useRef } from 'react';
+import { useLayoutEffect , useRef } from 'react';
 import gsap from 'gsap';
 
 import { NavBar } from '../elements/NavBar/NavBar';
@@ -10,12 +10,14 @@ import luz from '/assets/BIO/luz.png';
 export default function Biografia() {
     const comp = useRef(null);
     useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
+        const ctx = gsap.context(() => {
             const t1 = gsap.timeline()
 
             const R = document.querySelector('.biography-name-r')
+
+            const page = document.querySelector('#Page')
             
-            let h1 = document.querySelector('h1')
+            const h1 = document.querySelector('h1')
             if (window.innerWidth > 540) { 
                 t1.set(".loading-screen .rounded-div-wrap.bottom", { 
                   height: "10vh",
@@ -27,7 +29,9 @@ export default function Biografia() {
             }
             t1.set(".loading-screen", { 
                 top: "0",
-            }).set(R, { 
+            }).set(".loading-screen", { 
+                top: "0",
+            }).set(page, { 
                 scaleX: 1,
             }).set(".ray-image-subject",{
                 opacity: 0,
@@ -62,7 +66,7 @@ export default function Biografia() {
                 ease: "Power4.easeInOut",
             },"start").to(".ray-image-light",{
                 opacity: 1,
-                duration: 0.3,
+                duration: 0.4,
                 transform: "translateY(0rem)",
                 ease: "Quad.easeInOut",
             })
@@ -110,9 +114,9 @@ export default function Biografia() {
                 <div className='gradient'/>
                 <div className='h-screen'>                    
                 <div className='flex flex-col items-end '>
-                        <img src={bg} alt='bg' className='ray-image-background'/>
-                        <img src={subject} alt='subject' className='ray-image-subject'/>
-                        <img src={luz} alt='luz' className='ray-image-light'/>
+                        <img loading='lazy' src={bg} alt='bg' className='ray-image-background'/>
+                        <img loading='lazy' src={subject} alt='subject' className='ray-image-subject'/>
+                        <img loading='lazy' src={luz} alt='luz' className='ray-image-light'/>
                     </div> 
                     <div className='flex flex-row gap-5 items-center pl-14 pt-52 '>
                         <text className='biography-name-r'>R</text>

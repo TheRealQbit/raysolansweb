@@ -1,27 +1,29 @@
-import React, { useLayoutEffect , useRef } from 'react';
-import gsap, { random } from 'gsap';
+import  { useLayoutEffect , useRef } from 'react';
+import gsap from 'gsap';
 import { NavBar } from "../elements/NavBar/NavBar";
-import { ImageType1, ImageType2 } from '../elements/Gallery/displays';
+import { Display } from '../elements/Gallery/displays';
+import { Item } from '../App';
 
-const SectionGallery = ({props}) => {
-    if(props.video != '') {
+const SectionGallery = ({video, imagenes} :Item) => {
+    if(video != '') {
+        console.log(video)
         return(<video autoPlay loop muted className='main-section-image'>
-            <source src={props.video} type='video/mp4'/>
+            <source src={video} type='video/mp4'/>
         </video>)
         
     } else{
-        let random = Math.random() * (props.imagenes.length - 1)
+        let random = Math.random() * (imagenes.length - 1)
         random = Math.floor(random)
         return(
-        <img src={props.imagenes[random]} className='main-section-image'/>
+        <img loading='lazy'src={imagenes[random]} className='main-section-image'/>
     )
         
     }
 }
-export default function SectionPage({props}) {
+export default function SectionPage(props:Item) {
     const comp = useRef(null);
     useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
+        const ctx = gsap.context(() => {
             const t1 = gsap.timeline()
 
             if (window.innerWidth > 540) { 
@@ -80,19 +82,11 @@ export default function SectionPage({props}) {
                 <NavBar/>
                 <div className='main-section-image-div'>
                     <div className='main-section-image-gradient'/>
-                    <SectionGallery props={props}/>                    
+                    <SectionGallery {...props}/>                    
                     <h1 className='absolute inset-x-0 bottom-10 text-center text-8xl'>{props.nombre}</h1>
                     <div className='flex flex-col items-stretch relative bg-black'>
                         <h1 className='text-white p-0 pl-20 pt-32 pr-80 h-96 text-3xl text-left'>{props.descripcion}</h1>
-                        {props.imagenes.map((item, index) => (
-                                <div key={index}>
-                                    {props.tipoGalería[index] === 1 ? (
-                                        <ImageType1 image={item} text={props.tags[index]} />
-                                    ) : (
-                                        <ImageType2 image={item} text={props.tags[index]}/>
-                                    )}
-                                </div>
-                            ))}
+                        <Display images={props.imagenes}/>
                     </div>                  
                 </div>                      
             </div>            
