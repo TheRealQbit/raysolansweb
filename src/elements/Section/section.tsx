@@ -8,8 +8,8 @@ interface MinigalleryProps {
 }
 const Minigallery: React.FC<MinigalleryProps> = ({images}) => {
     return(
-        <div className="">
-            <div className="flex flex-row items-center p-12 h-72">
+        <div className="p-12">
+            <div className="grid-container">{/*flex flex-row items-center p-12 h-72 */}
                 <img src={images[0]} loading='lazy' className="mini-gallery-image"/>
                 <img src={images[1]} loading='lazy' className="mini-gallery-image"/>
                 <img src={images[2]} loading='lazy' className="mini-gallery-image"/>
@@ -35,7 +35,7 @@ function Section() {
         <div className="pt-20">
             <ul>
             {data.map((item,index) => (
-               <li key={index} className="content-center">
+               <li key={index} className="content-center bg-black">
                    <Link to={`/${item.nombre}`}>
                        <div className="flex flex-col items-center">
                            <img src={item.imagenes[1]} className="portada"/>

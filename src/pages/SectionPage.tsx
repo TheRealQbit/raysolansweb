@@ -1,4 +1,4 @@
-import  { useLayoutEffect , useRef } from 'react';
+import  { useLayoutEffect , useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { NavBar } from "../elements/NavBar/NavBar";
 import { Display } from '../elements/Gallery/displays';
@@ -22,6 +22,21 @@ const SectionGallery = ({video, imagenes} :Item) => {
 }
 export default function SectionPage(props:Item) {
     const comp = useRef(null);
+    const name = useRef(null);
+
+    useEffect(() => {
+        const el = name.current;
+        gsap.fromTo(el, { transform: "translateY(7rem)"}, {
+            transform: "translateY(-7rem)",
+            duration: 1, 
+            scrollTrigger: {
+                start: 'top bottom',
+                scrub: 1,
+                trigger: el,         
+            }
+            
+        })
+    }, [])
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const t1 = gsap.timeline()
@@ -66,7 +81,7 @@ export default function SectionPage(props:Item) {
         <div className='bg-black w-screen' ref={comp}>
             <div className='loading-container'>
                     <div className='loading-screen' id="loading-screen">
-                    <div className='flex flex-row gap-5 items-center'>
+                    <div className='flex flex-row gap-5 items-center self-start'>
                                 <text className='r'>{props.nombre.substring(0,1)}</text>
                                 <text className='loading-words'>{props.nombre.substring(1)}</text>
                     </div>
@@ -83,7 +98,7 @@ export default function SectionPage(props:Item) {
                 <div className='main-section-image-div'>
                     <div className='main-section-image-gradient'/>
                     <SectionGallery {...props}/>                    
-                    <h1 className='absolute inset-x-0 bottom-10 text-center text-8xl'>{props.nombre}</h1>
+                    <h1 className='absolute inset-x-0 bottom-10 text-center text-8xl' ref={name}>{props.nombre}</h1>
                     <div className='flex flex-col items-stretch relative bg-black'>
                         <h1 className='text-white p-0 pl-20 pt-32 pr-80 h-96 text-3xl text-left'>{props.descripcion}</h1>
                         <Display images={props.imagenes}/>

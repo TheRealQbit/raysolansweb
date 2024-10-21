@@ -3,8 +3,8 @@
 .portada{
     max-width: 70vh;
     height: 100%; /* Ensures the image scales down if the container is smaller */
-    width: auto; /* Maintains the aspect ratio of the image */
-    align: center;
+    width: auto; /* Maintains the aspect ratio of the image */    
+    align-self: center;
 }
 .seccion-titulo{
     font-family: "Familjen Grotesk";
@@ -12,6 +12,7 @@
     font-weight: bold;
     color: white;
     padding-top: 10px;
+    align-self: auto;
 }
 .seccion-tipo{
     font-family: "Tiro Bangla";
@@ -30,3 +31,26 @@
     width: 465px;
     height: 244px;
 }
+.grid-container{
+    display: grid;
+    gap: 12px;
+}
+@media (min-width: 1820px) {
+    .grid-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* 2 columns (2 rows) */
+  @media (min-width: 910px) and (max-width: 1819px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* 1 column (4 rows) */
+  @media (max-width: 909px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }

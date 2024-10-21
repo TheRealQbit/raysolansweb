@@ -1,0 +1,20 @@
+.menu-btn {
+  position: fixed;
+  top: 20px; /* Adjust the distance from the top */
+  right: 20px; /* Adjust the distance from the right */
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above other content */
+  border-radius: 50%;
+}
+
+.btn-bars{
+    position: absolute;
+    width: 2px;
+    height: 8px;
+    color: whitesmoke;
+}

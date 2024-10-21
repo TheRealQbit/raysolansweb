@@ -119,12 +119,6 @@ export const NavBar = () => {
         </div>
       </Link>
       <div className='flex flex-row items-end'>
-        <Link to="/bio" className="title3">
-          Biografía
-          <div className='bar3'>
-          <div className='bg-slate-50 w-full h-1 rounded '/>         
-          </div>
-        </Link>
         <Link to="/contact" className="title2">
           Contacto
           <div className='bar2'>

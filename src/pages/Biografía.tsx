@@ -122,24 +122,18 @@ export default function Biografia() {
                         <text className='biography-name-r'>R</text>
                         <text className='biography-name'>ay Solans</text>
                     </div>
-                    <div className='justify-start pl-14 pt-10 flex flex-col gap-5'>
+                    <div className='justify-start pl-14 pt-10 w-3/4 flex flex-col gap-5'>
                         <h1 className='text-white text-3xl font-normal text-left'>
                         Fotógrafo, Artista Visual, Pintor. Técnico de Telecomunicaciones. Fotógrafo Profesional.
-                        </h1>
-                        <h1 className='text-white text-3xl font-normal text-left'>
-                            Publicidad y Moda. Producción y realización cinematográfica, videográfica. 
-                        </h1>
-                        <h1 className='text-white text-3xl font-normal text-left'>
-                            Asesoramiento y asistencia diversos Estudios. Master de Fotografía PhotoEspaña.
+                        Publicidad y Moda. Producción y realización cinematográfica, videográfica. 
+                        Asesoramiento y asistencia diversos Estudios. Master de Fotografía PhotoEspaña.
                         </h1>
                         <h1 className='text-white text-3xl font-normal text-left'>
                             En 2019 publica su primer libro “Tentoria” basado en el diálogo de objetos y poesía.  
                         </h1>
                         <h1 className='text-white text-3xl font-normal text-left'>
-                            En 2022 publica un libro de relatos, colectivo, “Punto y Sentido”. 
-                        </h1>
-                        <h1 className='text-white text-3xl font-normal text-left '>
-                        Exposiciones individuales y colectivas en Bodegas Portia (Burgos),
+                            En 2022 publica un libro de relatos, colectivo, “Punto y Sentido”.
+                            Exposiciones individuales y colectivas en Bodegas Portia (Burgos),
                         </h1>
                         <h1 className='text-white text-3xl font-normal text-left z-10'>
                         Centro de Arte Alcobendas, Conde Duque, Guadalajara, Majadahonda

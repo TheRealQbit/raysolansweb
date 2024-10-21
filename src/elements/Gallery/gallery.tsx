@@ -6,8 +6,8 @@ const Gallery = ({imgArray}:GalleryProps) => {
         random = Math.floor(random)
     return (
         <div className=''>          
-            <img src={imgArray[random]} alt='gallery' loading='lazy'className='h-screen object-cover w-full'/>
-            <div className='h-fit w-fit absolute'>
+            <img src={imgArray[random]} alt='gallery' loading='lazy'className='h-screen object-cover w-screen'/>
+            <div className='h-fit w-screen absolute'>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import {useEffect, useState,} from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Onboarding from './pages/Onboarding'
 import {AnimatePresence} from "framer-motion";
@@ -22,6 +22,8 @@ export interface Item {
 function App() {
   const [data, setData] = useState([]);
   useEffect(()=>{
+
+    // Cleanup function to restore the original style
     fetch('./secciones.json')
         .then((response) => {
           if(!response.ok){
@@ -31,11 +33,14 @@ function App() {
         })
         .then((data) => setData(data))
         .catch((error) => console.error('Error fetching data:', error));
+    return () => {
+          document.body.style.overflowX = '';
+    };
   }, []);
   return (
     <div>
         <AnimatePresence>
-          <BrowserRouter>
+          <HashRouter>
           <ScrollToTop/>
             <Routes>
               <Route index element={<Onboarding />} />
@@ -46,7 +51,7 @@ function App() {
               <Route path="/contact" element={<Contacto/>}/>
               <Route path="/bio" element={<Biografia/>}/>
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </AnimatePresence>
     </div>
   )

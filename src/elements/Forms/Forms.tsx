@@ -10,7 +10,7 @@ import "./formInput.css";
       setResult("Sending....");
       const formData = new FormData(event.target as HTMLFormElement);
   
-      formData.append("access_key", "577fd3f0-93c6-483c-9473-6429962e9485");
+      formData.append("access_key", import.meta.env.ACCESS_KEY);
   
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
