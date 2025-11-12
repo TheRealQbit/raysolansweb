@@ -2,67 +2,73 @@
   {
     "nombre": "Afrika Bambata",
     "tipo": "RETRATOS",
-    "imagenes": ["./assets/AFRIKA BAMBATA/_RAY9325.jpg", "./assets/AFRIKA BAMBATA/_RAY9517 copiaMASAI SURRENDER.JPG", "./assets/AFRIKA BAMBATA/_RAY9824.jpg", "./assets/AFRIKA BAMBATA/_RAY9831.jpg", "./assets/AFRIKA BAMBATA/16.10.NK.TANZANIA.VIOLET 02 copia.jpg", "./assets/AFRIKA BAMBATA/RAY.SOLANS 2014.WEB010 copia.jpg", "./assets/AFRIKA BAMBATA/Tanganika.16.0046.jpg", "./assets/AFRIKA BAMBATA/Tanganika.16.0053 copia.jpg"],
-    "descripcion": "Afrika Bambata es un proyecto fotográfico que nace de la necesidad de mostrar la belleza de la gente de África. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser.",
+    "imagenes": ["/assets/AFRIKA BAMBATA/africa_bambata_1.jpg", "/assets/AFRIKA BAMBATA/africa_bambata_2.jpg", "/assets/AFRIKA BAMBATA/africa_bambata_3.jpg", "/assets/AFRIKA BAMBATA/africa_bambata_4.jpg", "/assets/AFRIKA BAMBATA/africa_bambata_5.jpg", "/assets/AFRIKA BAMBATA/africa_bambata_6.jpg", "/assets/AFRIKA BAMBATA/africa_bambata_7.jpg", "/assets/AFRIKA BAMBATA/africa_bambata_8.jpg"],
+    "descripcion": "Africa Subsahariana, nunca te deja indiferente.Su luz, su paisaje y sobre todo su gente.Personas que se sustentan en una sola cosa, la esperanza.Siempre me he encontrado con gente amable, alegre, con ganas de conocer y que les conozcas.En este proyecto, me encaminé al pueblo Masai.Altivos guerreros y ganaderos que beben leche de vaca recién ordeñada con sangre del propio animal.Adaptados a su entorno, conviven con seis grandes, leones,búfalos, jirafas, leopardos, rinocerontes y el rey, a mi entender, elelefante. cultura, de su forma de vida, de su forma de ser.",
     "fecha": "2016",
     "lugar": "Tanganika",
     "tipoGalería": [1,0,1,0,1,0,1,0],
     "tags": ["retratos", "afrika", "bambata", "africa", "retratos", "afrika", "bambata", "africa"],
-    "video":""
+    "video":"",
+    "portada": "/assets/AFRIKA BAMBATA/africa_bambata_3.jpg"
   },
   {
     "nombre": "Havana Vella",
     "tipo": "POR DETERMINAR",
-    "imagenes": ["./assets/HAVANA VELLA/11.08.NK.HAVN.STREET 54.jpeg", "./assets/HAVANA VELLA/11.10.NK.HAVANA VIEJA 49.jpeg", "./assets/HAVANA VELLA/11.10.NK.HAVANA VIEJA 57.jpeg", "./assets/HAVANA VELLA/18.07.NK.HAVAN.LA BODEGUITA. CALLEJPG.jpeg", "./assets/HAVANA VELLA/DSC_0114 copia.JPG", "./assets/HAVANA VELLA/Maniqui deconstruido copia.jpg", "./assets/HAVANA VELLA/RAY.SOLANS 2014.WEB116.jpg", "./assets/HAVANA VELLA/RAY.SOLANS 2014.WEB119.jpg", "./assets/HAVANA VELLA/RAY.SOLANS 2014.WEB120.jpg", "./assets/HAVANA VELLA/RAY.SOLANS 2014.WEB122.jpg", "./assets/HAVANA VELLA/RAY.SOLANS 2014.WEB123.jpg", "./assets/HAVANA VELLA/RAY.SOLANS 2014.WEB124.jpg", "./assets/HAVANA VELLA/RAY.SOLANS 2014.WEB167.jpg", "./assets/HAVANA VELLA/RAY.SOLANS 2014.WEB174.jpg"],
-    "descripcion": "Havana Vella es un proyecto fotográfico que nace de la necesidad de mostrar la belleza de la gente de África. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser.",
+    "imagenes": ["/assets/HAVANA VELLA/havana_vella_1.jpeg", "/assets/HAVANA VELLA/havana_vella_2.jpeg", "/assets/HAVANA VELLA/havana_vella_3.jpeg", "/assets/HAVANA VELLA/havana_vella_4.jpeg", "/assets/HAVANA VELLA/havana_vella_5.JPG", "/assets/HAVANA VELLA/havana_vella_6.jpg", "/assets/HAVANA VELLA/havana_vella_7.jpg", "/assets/HAVANA VELLA/havana_vella_8.jpg", "/assets/HAVANA VELLA/havana_vella_9.jpg", "/assets/HAVANA VELLA/havana_vella_10.jpg", "/assets/HAVANA VELLA/havana_vella_11.jpg", "/assets/HAVANA VELLA/havana_vella_12.jpg", "/assets/HAVANA VELLA/havana_vella_13.jpg", "/assets/HAVANA VELLA/havana_vella_14.jpg"],
+    "descripcion": "Significa la habana vieja en catalán, al final contaré porque.“Salió como el perro que tumbó la olla”, se refiere cuando las cosas no salen bien. En Cuba, las cosas no salen bien hace tiempo. Este proyecto se gestó durante el mes de septiembre de 2005, durante un viaje a la isla de tres semanas. Recorrí la Havana, con un calor y cercanía como si fuera de aquellos barrios. Las casas coloniales, medio derruidas y habitadas por familias testarudas, educadas, pobres, alegres, amables…. \n Intentando huir de los estereotipos, esquivando la Bodeguita, Tropicana…. Este trabajo, me enorgullece y dice mucho de lo que vendrá después en mi obra.\n Catalanes, como yo, hubo mucho en la isla. En medio mundo, también, como ahora. A mucha honra",
     "fecha": "2016",
     "lugar": "Tanganika",
     "tipoGalería": [1,0,1,0,1,0,1,0,1,0,1,0,0,1,1],
     "tags": ["retratos", "afrika", "bambata", "africa"],
-    "video":""
+    "video":"",
+    "portada": "/assets/HAVANA VELLA/havana_vella_2.jpeg"
   },
   {
     "nombre": "ON THE BEACH",
     "tipo": "POR DETERMINAR",
-    "imagenes": ["./assets/ON THE BEACH/14.07.NK.ON THE BEACH 5654.jpeg", "./assets/ON THE BEACH/14.08.NK. ON THE BEACH 6494.jpeg", "./assets/ON THE BEACH/14.11.NK. ON THE BEACH 8799479.jpeg", "./assets/ON THE BEACH/17.07.NK.MUNCH. SURF PARK 02.jpeg", "./assets/ON THE BEACH/3108DANCING ON THE BEACH 2020.07.JPG", "./assets/ON THE BEACH/FLYING CLEAN.jpg", "./assets/ON THE BEACH/P1080160.JPG", "./assets/ON THE BEACH/RAY.SOLANS 2014.WEB076.jpg", "./assets/ON THE BEACH/RAY.SOLANS 2014.WEB085.jpg", "./assets/ON THE BEACH/RAY_3026.JPG", "./assets/ON THE BEACH/RAY_3083.JPG", "./assets/ON THE BEACH/17.07.NK.MUNCH. SURF PARK 22.jpeg"],
+    "imagenes": ["/assets/ON THE BEACH/on_the_beach_1.jpeg", "/assets/ON THE BEACH/on_the_beach_2.jpeg", "/assets/ON THE BEACH/on_the_beach_3.jpeg", "/assets/ON THE BEACH/on_the_beach_4.jpeg", "/assets/ON THE BEACH/on_the_beach_5.jpeg", "/assets/ON THE BEACH/on_the_beach_6.jpg", "/assets/ON THE BEACH/on_the_beach_7.jpg", "/assets/ON THE BEACH/on_the_beach_8.jpg", "/assets/ON THE BEACH/on_the_beach_9.jpg", "/assets/ON THE BEACH/on_the_beach_10.jpg", "/assets/ON THE BEACH/on_the_beach_11.jpg", "/assets/ON THE BEACH/on_the_beach_12.jpg"],
     "descripcion": "Havana Vella es un proyecto fotográfico que nace de la necesidad de mostrar la belleza de la gente de África. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser.",
     "fecha": "2016",
     "lugar": "Tanganika",
     "tipoGalería": [1,0,1,0,1,0,1,0,1,0,1,1],
     "tags": ["retratos", "afrika", "bambata", "africa"],
-    "video":""
+    "video":"",
+    "portada": "/assets/ON THE BEACH/on_the_beach_8.jpg"
   },
   {
     "nombre": "TENTORIA SPECTRUM",
     "tipo": "POR DETERMINAR",
-    "imagenes": ["./assets/TENTORIA SPECTRUM/_RAY2180.JPG", "./assets/TENTORIA SPECTRUM/_RAY2239.JPG", "./assets/TENTORIA SPECTRUM/7.LETS GO copia.jpg", "./assets/TENTORIA SPECTRUM/GOLDEN ARM.jpg", "./assets/TENTORIA SPECTRUM/JAPANISE HANDS.jpg", "./assets/TENTORIA SPECTRUM/LA PELONA.jpg", "./assets/TENTORIA SPECTRUM/Maniken Kids.jpg", "./assets/TENTORIA SPECTRUM/No Siameses.jpg", "./assets/TENTORIA SPECTRUM/TENTORIA13v2.jpg", "./assets/TENTORIA SPECTRUM/111419Filosofia ciega.baja copia.JPG"],
+    "imagenes": ["/assets/TENTORIA SPECTRUM/_RAY2180.JPG", "/assets/TENTORIA SPECTRUM/_RAY2239.JPG", "/assets/TENTORIA SPECTRUM/7.LETS GO copia.jpg", "/assets/TENTORIA SPECTRUM/GOLDEN ARM.jpg", "/assets/TENTORIA SPECTRUM/JAPANISE HANDS.jpg", "/assets/TENTORIA SPECTRUM/LA PELONA.jpg", "/assets/TENTORIA SPECTRUM/Maniken Kids.jpg", "/assets/TENTORIA SPECTRUM/No Siameses.jpg", "/assets/TENTORIA SPECTRUM/TENTORIA13v2.jpg", "/assets/TENTORIA SPECTRUM/111419Filosofia ciega.baja copia.JPG"],
     "descripcion": "Havana Vella es un proyecto fotográfico que nace de la necesidad de mostrar la belleza de la gente de África. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser.",
     "fecha": "2016",
     "lugar": "Tanganika",
     "tipoGalería": [1,0,1,0],
     "tags": ["retratos", "afrika", "bambata", "africa"],
-    "video":"./assets/TENTORIA SPECTRUM/TENTORIA PROJECT   by Ray Solans.m4v"
+    "video":"/assets/video.m4v",
+    "portada": "/assets/TENTORIA SPECTRUM/LA PELONA.jpg"
   },
   {
     "nombre": "STYLE & FASHION",
     "tipo": "POR DETERMINAR",
-    "imagenes": ["./assets/STYLE & FASHION/4 FINGERS.jpg", "./assets/STYLE & FASHION/08.23.SY.SHANGAI FASION 08.jpeg", "./assets/STYLE & FASHION/23.05.NK.GARCI.JULIANSKI 05.jpeg", "./assets/STYLE & FASHION/JULIA 01 RAY SOLANS copia.JPG", "./assets/STYLE & FASHION/VIOLET 04 copia.JPG", "./assets/STYLE & FASHION/VIOLET 05 copia.JPG", "./assets/STYLE & FASHION/23.05.NK.GARCI.XX9 02.jpeg", "./assets/STYLE & FASHION/23.06.NK.GARCI.XX9.jpeg"],
+    "imagenes": ["/assets/STYLE & FASHION/style_1.jpg", "/assets/STYLE & FASHION/style_2.jpeg", "/assets/STYLE & FASHION/style_3.jpeg", "/assets/STYLE & FASHION/style_4.jpeg", "/assets/STYLE & FASHION/style_5.jpeg", "/assets/STYLE & FASHION/style_6.JPG", "/assets/STYLE & FASHION/style_7.JPG", "/assets/STYLE & FASHION/style_8.JPG"],
     "descripcion": "Havana Vella es un proyecto fotográfico que nace de la necesidad de mostrar la belleza de la gente de África. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser.",
     "fecha": "2016",
     "lugar": "Tanganika",
     "tipoGalería": [1,0,1,0,1,0,1,0],
     "tags": ["retratos", "afrika", "bambata", "africa"],
-    "video":""
+    "video":"",
+    "portada": "/assets/STYLE & FASHION/style_2.jpeg"
   },
   {
     "nombre": "中国",
     "tipo": "POR DETERMINAR",
-    "imagenes": ["./assets/中国/24.01.SY.PEK. MARKET 21.jpeg", "./assets/中国/24.01.SY.PEK.IMP PALC. GIRL 03.01.jpeg", "./assets/中国/24.01.SY.PEK.J & J 08.jpeg", "./assets/中国/23.10.SY,QUIN PALACE TIGER.jpeg"],
+    "imagenes": ["/assets/porcelana/porcelana_1.jpeg", "/assets/porcelana/porcelana_2.jpeg", "/assets/porcelana/porcelana_3.jpeg", "/assets/porcelana/porcelana_4.jpeg", "/assets/porcelana/porcelana_5.jpeg"],
     "descripcion": "Havana Vella es un proyecto fotográfico que nace de la necesidad de mostrar la belleza de la gente de África. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser. La idea es mostrar la belleza de la gente de África, de su cultura, de su forma de vida, de su forma de ser.",
     "fecha": "2016",
     "lugar": "Tanganika",
     "tipoGalería": [1,0,1,0],
     "tags": ["retratos", "afrika", "bambata", "africa"],
-    "video":""
+    "video":"",
+    "portada": "/assets/porcelana/porcelana_4.jpeg"
   }
 ]

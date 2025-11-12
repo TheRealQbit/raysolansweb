@@ -1,12 +1,20 @@
 import { useLayoutEffect , useRef } from 'react';
 import gsap from 'gsap';
 
-import subject from '/assets/Ray/Subject.png';
-import bg from '/assets/Ray/bg.png';
+import { withBase } from '../functions';
 import { NavBar } from '../elements/NavBar/NavBar';
 import Contact from '../elements/Forms/Forms';
+import LoadingContainer from '../elements/loadingContainer';
+import Footer from '../elements/Footer/Footer';
+import { AnimatedBrand } from '../elements/AnimatedBrand/AnimatedBrand';
+
 export default function Contacto() {
     const comp = useRef(null);
+
+    const handleLogoClick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const t1 = gsap.timeline()
@@ -75,34 +83,25 @@ export default function Contacto() {
         return() => ctx.revert()
     }, [])
     return (
-        <div className='bg-black relative w-screen h-screen' ref={comp} >
-            <div className='loading-container'>
-                <div className='loading-screen' id="loading-screen">
-                    <div className='flex flex-row gap-5 items-center'>
-                        <text className='r'>C</text>
-                        <text className='loading-words'>ontacto</text>
-                    </div>
-                    <div className='rounded-div-wrap top'>
-                        <div className='rounded-div'></div>                                
-                    </div>
-                    <div className='rounded-div-wrap bottom'>
-                        <div className='rounded-div'></div>
-                    </div>
+        <div className='relative w-screen' ref={comp} >
+            <LoadingContainer text='Contacto'/>
+            <div id="Page" className="page">
+                <NavBar />
+                <div className="absolute top-6 left-6 md:top-8 md:left-8 z-40">
+                    <AnimatedBrand onClick={handleLogoClick} />
                 </div>
-            </div>
-            <div id="Page">
-                <NavBar />                
                 <div className='gradient'/>
                 <div className='h-screen'>                    
                     <div className='flex flex-col items-end '>
-                        <img loading='lazy' src={bg} alt='bg' className='ray-image-background'/>
-                        <img loading='lazy' src={subject} alt='subject' className='ray-image-subject'/>
+                        <img loading='eager' src={withBase('/assets/Ray/bg.png')} alt='bg' className='ray-image-background'/>
+                        <img loading='eager' src={withBase('/assets/Ray/Subject.png')} alt='subject' className='ray-image-subject'/>
                     </div>
                     <h1 className='contact-form-text'>Trabajemos</h1>
                     <div className='contact-form'>
                         <Contact/>
                     </div>                      
                 </div> 
+                <Footer />
                            
             </div>
         </div>

@@ -2,13 +2,18 @@ import { useLayoutEffect , useRef } from 'react';
 import gsap from 'gsap';
 
 import { NavBar } from '../elements/NavBar/NavBar';
+import Footer from '../elements/Footer/Footer';
+import { AnimatedBrand } from '../elements/AnimatedBrand/AnimatedBrand';
 
-import subject from '/assets/BIO/sujeto.png';
-import bg from '/assets/BIO/bg.png';
-import luz from '/assets/BIO/luz.png';
+import { withBase } from '../functions';
 
 export default function Biografia() {
     const comp = useRef(null);
+
+    const handleLogoClick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const t1 = gsap.timeline()
@@ -110,13 +115,16 @@ export default function Biografia() {
                 </div>
             </div>
             <div id="Page">
-                <NavBar />                
+                <NavBar />
+                <div className="absolute top-6 left-6 md:top-8 md:left-8 z-40">
+                    <AnimatedBrand onClick={handleLogoClick} />
+                </div>
                 <div className='gradient'/>
                 <div className='h-screen'>                    
                 <div className='flex flex-col items-end '>
-                        <img loading='lazy' src={bg} alt='bg' className='ray-image-background'/>
-                        <img loading='lazy' src={subject} alt='subject' className='ray-image-subject'/>
-                        <img loading='lazy' src={luz} alt='luz' className='ray-image-light'/>
+                        <img loading='lazy' src={withBase('/assets/BIO/bg.png')} alt='bg' className='ray-image-background'/>
+                        <img loading='lazy' src={withBase('/assets/BIO/sujeto.png')} alt='subject' className='ray-image-subject'/>
+                        <img loading='lazy' src={withBase('/assets/BIO/luz.png')} alt='luz' className='ray-image-light'/>
                     </div> 
                     <div className='flex flex-row gap-5 items-center pl-14 pt-52 '>
                         <text className='biography-name-r'>R</text>
@@ -140,7 +148,7 @@ export default function Biografia() {
                         </h1>
                     </div>                    
                 </div> 
-                           
+                <Footer />           
             </div>
         </div>
     )

@@ -1,0 +1,111 @@
+.footer-container {
+	width: 100%;
+	background: rgba(0, 0, 0, 0.02);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	padding: clamp(16px, 3vw, 28px) 0;
+}
+
+.footer-content {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 0 clamp(8px, 2vw, 24px);
+}
+
+.footer-brand {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	user-select: none;
+}
+
+.footer-brand-text {
+	display: inline-flex;
+	align-items: center;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: clamp(14px, 3vw, 20px);
+	font-weight: 600;
+	letter-spacing: -0.02em;
+}
+
+.footer-initial {
+	transform: scaleX(-1);
+	margin-right: clamp(0px, 0.1vw, 1px);
+	opacity: 0.9;
+}
+
+.footer-name {
+	margin-left: clamp(0px, 0.1vw, 1px);
+}
+.footer-logo {
+    height: clamp(24px, 4vw, 32px); /* Adjust size as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: clamp(8px, 1vw, 12px); /* Space between logo and text */
+}
+
+.footer-underline {
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+	border-radius: 1px;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-brand:hover .footer-underline,
+.footer-brand:focus-visible .footer-underline {
+	transform: scaleX(1);
+}
+
+.footer-brand:focus-visible {
+	outline: 2px solid rgba(255, 255, 255, 0.3);
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+.footer-meta {
+	color: rgba(255, 255, 255, 0.85);
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: clamp(12px, 2vw, 14px);
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	white-space: nowrap;
+}
+
+.footer-bullet {
+	opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+	.footer-content {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+	}
+}
+
+/* Scroll-to-top fade overlay */
+.scroll-fade-overlay {
+	position: fixed;
+	inset: 0;
+	background: black;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 300ms ease;
+	z-index: 9999;
+}
+
+.scroll-fade-overlay.visible {
+	opacity: 0.25; /* subtle dim during transition */
+}

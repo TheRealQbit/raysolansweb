@@ -1,0 +1,28 @@
+.image-viewer-overlay {
+    /* Estado inicial (antes de la animación de entrada) */
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo semitransparente */
+    transition: opacity 0.3s ease-in-out; /* Transición para la opacidad */
+    z-index: 50; /* Asegurar que esté por encima de otro contenido */
+    box-sizing: border-box; /* Incluir padding/border en el tamaño total si se añaden */
+  }
+  
+  .image-viewer-overlay.visible {
+    /* Estado final (después de la animación de entrada / antes de la salida) */
+    opacity: 1;
+  }
+  
+  .image-viewer-image {
+    /* Estado inicial (antes de la animación de entrada) */
+    opacity: 0;
+    transform: scale(0.9); /* Ligeramente más pequeño */
+    display: block; /* Asegurar comportamiento de bloque */
+    /* Transiciones para opacidad y transformación (escala) */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .image-viewer-image.visible {
+    /* Estado final (después de la animación de entrada / antes de la salida) */
+    opacity: 1;
+    transform: scale(1); /* Tamaño normal */
+  }

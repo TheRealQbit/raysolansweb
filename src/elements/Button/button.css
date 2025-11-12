@@ -1,20 +1,70 @@
 .menu-btn {
   position: fixed;
-  top: 20px; /* Adjust the distance from the top */
-  right: 20px; /* Adjust the distance from the right */
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 24px;
+  top: clamp(16px, 3vw, 32px);
+  right: clamp(16px, 3vw, 32px);
+  z-index: 1000;
   cursor: pointer;
-  z-index: 1000; /* Ensure it's above other content */
-  border-radius: 50%;
+}
+
+.menu-btn-container {
+  width: clamp(56px, 8vw, 72px);
+  height: clamp(56px, 8vw, 72px);
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: clamp(14px, 2vw, 18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.menu-btn-container:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-btn-container:active {
+  transform: scale(0.96);
+  transition-duration: 0.1s;
+}
+
+.menu-lines-wrapper {
+  width: clamp(20px, 3vw, 28px);
+  height: clamp(16px, 2.5vw, 22px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-line {
+  width: clamp(20px, 3vw, 28px);
+  height: clamp(2px, 0.3vw, 3px);
+  background-color: white;
+  border-radius: clamp(1px, 0.15vw, 1.5px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.menu-line-1 {
+  width: clamp(20px, 2.4vw, 28px);
+}
+
+.menu-line-2 {
+  width: clamp(20px, 3vw, 28px);
+}
+
+/* Material Design elevation and focus states */
+.menu-btn:focus-visible .menu-btn-container {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 2px;
 }
 
 .btn-bars{
     position: absolute;
-    width: 2px;
-    height: 8px;
+    width: 2vw;
+    height: 8vh;
     color: whitesmoke;
 }

@@ -4,128 +4,93 @@ import gsap from 'gsap';
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 
-export const NavBar = () => {
+interface NavBarProps {
+  onMenuClick?: () => void;
+}
+
+export const NavBar = ({ onMenuClick }: NavBarProps) => {
   const comp = useRef(null);
+  
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
         const t1 = gsap.timeline()
-        t1.add("side")
-        t1.set(".bar",{
-          opacity: 0,
-        }).set(".bar2",{
-          opacity: 0,
-        }).set(".bar3",{
-          opacity: 0,
-        }).set(".title",{
-          transform: "translateY(-2rem)",
-          opacity: 0,
-        }).set(".title2",{
-          transform: "translateY(-2rem)",
-          opacity: 0,
-        }).set(".title3",{
-          transform: "translateY(-2rem)",
+        
+        // Initial state - hide navbar
+        t1.set(".navbar-container", {
+          y: -100,
           opacity: 0,
         })
-        .to(".title",{
-          transform: "translateY(0rem)",
-          delay: 1,
-          opacity: 1,          
-          duration: .5,
-        }).to(".title2",{
-          transform: "translateY(0rem)",
+        // Animate in
+        .to(".navbar-container", {
+          y: 0,
           opacity: 1,
-          duration: .5,
-        },"side").to(".title3",{
-          transform: "translateY(0rem)",
-          opacity: 1,
-          duration: .5,
-        },"side")
-
-        const t2 = gsap.timeline()
-        t2.pause();
-        t2.add("side")
-        .to(".title",{
-          transform: "translateY(-.5rem)",          
-          duration: .5,
-        },"side").to(".bar",{
-          opacity: 1,
-          duration: .5,
-        },"side")
-
-        const t3 = gsap.timeline()
-
-        t3.pause();
-        t3.add("side")
-        .to(".title2",{
-          transform: "translateY(-.5rem)",          
-          duration: .5,
-        },"side").to(".bar2",{
-          opacity: 1,
-          duration: .5,
-        },"side")
-
-        const t4= gsap.timeline()
-
-        t4.pause();
-        t4.add("side")
-        .to(".title3",{
-          transform: "translateY(-.5rem)",          
-          duration: .5,
-        },"side").to(".bar3",{
-          opacity: 1,
-          duration: .5,
-        },"side")
-
-        const title = document.querySelector('.title')
-
-        title?.addEventListener('mouseover', () => {
-          t2.play()
-        })
-        title?.addEventListener('mouseleave', () => {
-          t2.reverse()
+          duration: 0.6,
+          delay: 0.5,
+          ease: "Power3.easeOut"
         })
 
-        const title2 = document.querySelector('.title2')
+        // Hover animations for nav items
+        const createHoverAnimation = (selector: string) => {
+          const tl = gsap.timeline({ paused: true });
+          // Set initial state
+          tl.set(`${selector} .nav-item-underline`, {
+            scaleX: 0
+          })
+          .to(`${selector} .nav-item-text`, {
+            y: -2,
+            duration: 0.2,
+            ease: "Power2.easeOut"
+          })
+          .to(`${selector} .nav-item-underline`, {
+            scaleX: 1,
+            duration: 0.3,
+            ease: "Power2.easeOut"
+          }, 0);
 
-        title2?.addEventListener('mouseover', () => {
-          t3.play()
-        })
-        title2?.addEventListener('mouseleave', () => {
-          t3.reverse()
-        })
+          const element = document.querySelector(selector);
+          element?.addEventListener('mouseenter', () => tl.play());
+          element?.addEventListener('mouseleave', () => tl.reverse());
+        };
 
-        const title3 = document.querySelector('.title3')
+        createHoverAnimation('.nav-brand');
+        createHoverAnimation('.nav-contact');
 
-        title3?.addEventListener('mouseover', () => {
-          t4.play()
-        })
-        title3?.addEventListener('mouseleave', () => {
-          t4.reverse()
-        })
+    }, comp);
 
-    }, comp)
-
-    return() => ctx.revert()
+    return () => ctx.revert();
 }, [])
+
   return (
-    <nav ref={comp}>
-      <Link to="/" className="title">
-        <div className='flex flex-row gap-.5 items-center'>
-          <text className="-scale-x-100">R</text>
-          <text>ay Solans</text>
-        </div>
-        <div className='bar'>          
-          <div className='bg-slate-50 absolute w-full h-1 rounded'/>
-        </div>
-      </Link>
-      <div className='flex flex-row items-end'>
-        <Link to="/contact" className="title2">
-          Contacto
-          <div className='bar2'>
-          <div className='bg-slate-50 w-full h-1 rounded '/>         
+    <nav ref={comp} className='navbar-container'>
+      <div className='navbar-content'>
+        <Link to="/" className="nav-brand nav-item">
+          <div className="nav-item-text">
+            <img src="/dark-theme-icon.svg" className="nav-logo" />
+            <span className="nav-initial">R</span>
+            <span className="nav-name">ay Solans</span>
           </div>
+          <div className="nav-item-underline" />
         </Link>
-      </div>      
+        
+        <div className='navbar-actions'>
+          <Link to="/contact" className="nav-contact nav-item">
+            <div className="nav-item-text font-special-elite">Contacto</div>
+            <div className='nav-item-underline'></div>
+          </Link>
+          
+          {/* Mobile menu button */}
+          <button 
+            className="nav-menu-btn" 
+            onClick={onMenuClick}
+            aria-label="Open menu"
+          >
+            <div className="menu-lines-wrapper">
+              <div className="menu-line menu-line-1"></div>
+              <div className="menu-line menu-line-2"></div>
+            </div>
+          </button>
+        </div>      
+      </div>
     </nav>
   );
 };

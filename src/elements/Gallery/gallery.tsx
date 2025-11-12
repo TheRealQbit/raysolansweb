@@ -1,3 +1,5 @@
+import { withBase } from '../../functions';
+
 interface GalleryProps {
     imgArray: string[];
 }
@@ -6,8 +8,8 @@ const Gallery = ({imgArray}:GalleryProps) => {
         random = Math.floor(random)
     return (
         <div className=''>          
-            <img src={imgArray[random]} alt='gallery' loading='lazy'className='h-screen object-cover w-screen'/>
-            <div className='h-fit w-screen absolute'>
+            <img src={withBase(imgArray[random])} alt='gallery' loading='eager'className='h-screen object-cover w-screen'/>
+            <div className='h-screen w-screen absolute'>
             </div>
         </div>
     )

@@ -1,7 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Special+Elite&display=swap');
 :root{
     --animation-slow: all .9s cubic-bezier(.7, 0, .3, 1);
-    --color-dark-dark: #141517
+    --color-dark-dark: #141517;
+    --font-typewritter: "Special Elite", sans-serif;
+}
+html, body, #root {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.no-overflow {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.hero-heading-large {
+    font-size: clamp(28px, 10vw, 128px);
+    line-height: 1.05;
+    margin: 0;
+}
+
+.hero-heading-small {
+    font-size: clamp(18px, 5vw, 48px);
+    line-height: 1.15;
+    margin: 0;
+}
+/* Global overflow guards */
+html, body, #root {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Utility to prevent long words causing overflow */
+.no-overflow {
+    max-width: 100%;
+    overflow-wrap: anywhere; /* break long words if needed */
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* Responsive hero headings */
+.hero-heading-large {
+    font-size: clamp(28px, 10vw, 128px);
+    line-height: 1.05;
+    margin: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.hero-heading-small {
+    font-size: clamp(18px, 5vw, 48px);
+    line-height: 1.15;
+    margin: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 .gradient {
     position: absolute; /* Use absolute positioning */
@@ -72,7 +127,7 @@ h1 {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
     z-index: 800;
@@ -85,13 +140,12 @@ h1 {
 .loading-screen {
     position: relative;
     padding: 0;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    will-change: top;
-    top: calc(-100%);
-    align-items: center;
-    align-self: center;
+    width: 100vw; /* Adjust to content width */
+    height: 100vh; /* Adjust to content height */
+    display: flex; /* Enable flexbox on this element as well */
+    justify-content: center; /* Center inner content horizontally */
+    align-items: center; /* Center inner content vertically */
+    flex-direction: column; /* Stack items vertically if necessary */
 }
 .loading-container .rounded-div-wrap.top {
     top: 0;
@@ -126,29 +180,25 @@ h1 {
 }
 .loading-words{ 
     position: relative;
-    font-size: 8rem;
-    font-family: Oxygen Mono;    
+    font-size: 8vw;
+    font-family: Oxygen Mono;
     text-align: center;
-    align-self: center;
-    top: 40vh;
-    left: 50vh;
     opacity: 1;
     display: block;
-    color:whitesmoke
+    color: whitesmoke;
+    margin: 0; /* Ensure no extra spacing affects alignment */
     
 }
 .r{
     transform: scaleX(-1);
     position: relative;
-    font-size: 8rem;
-    font-family: Oxygen Mono;    
+    font-size: 8vw;
+    font-family: Oxygen Mono;
     text-align: center;
-    align-self: center;
-    top: 40vh;
-    left: 50vh;
     opacity: 1;
     display: block;
-    color:whitesmoke
+    color: whitesmoke;
+    margin: 0; /* Ensure no extra spacing affects alignment */
 }
 .biography-name{
     font-size: 8rem;
@@ -181,13 +231,15 @@ h1 {
 .main-section-image-div {
     position: absolute;
     height: 80vh;
+    width: 100vw;
     top: 0rem;    
 }
 .main-section-image-gradient {
     position: absolute; /* Use absolute positioning */
-    width: 100%; /* Full viewport width */
+    width: 100vw; /* Full viewport width */
     height: 90vh; /* 38% of viewport height */
     background: linear-gradient(180deg, rgb(0, 0, 0) -90%, rgba(255,255,255,0) 100%);
+    z-index: 12;
 }
 .ray-image-background {
     position: absolute;
@@ -237,51 +289,170 @@ body::-webkit-scrollbar {
 .side-menu {
     position: fixed;
     top: 0;
-    left: 0px; /* Initially off-screen */
-    width: 300px;
-    height: 100%;
-    background-color: #333;
+    left: 0;
+    width: min(clamp(260px, 25vw, 360px), 100vw);
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(24px);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
     color: white;
-    transition: z-index 0s step-end;
+    /* Rely on GSAP for transform/opacity; only z-index transitions here */
+    transition: z-index 0s step-end 0.6s;
+    transform: translateX(-100%);
+    opacity: 0;
     z-index: -1;
-    padding: 20px;
+    padding: clamp(12px, 3vw, 24px);
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.side-menu.open{
-    z-index: 1;
-    transition: z-index 0.7s step-end;
+.side-menu.open {
+    /* GSAP sets transform/opacity; class only flips stacking */
+    z-index: 1000;
+    transition: z-index 0s step-start;
 }
 
-  /* Close Button inside the menu */
+/* Close Button */
 .close-button {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 24px;
+    top: clamp(16px, 3vw, 24px);
+    right: clamp(16px, 3vw, 24px);
+    width: clamp(32px, 6vw, 40px);
+    height: clamp(32px, 6vw, 40px);
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    font-size: clamp(18px, 3vw, 24px);
     color: white;
     cursor: pointer;
-    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
 }
-  
-  /* Menu Content Styling */
-.menu-content p {
-    margin: 20px 0;
-    font-size: 18px;
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
 }
-  
-  /* Overlay when the menu is open */
-.overlay {
+
+.close-button:active {
+    transform: scale(0.95);
+}
+
+/* Menu Content Container */
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: clamp(60px, 10vw, 80px);
+    height: calc(100vh - clamp(80px, 12vw, 120px));
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: 100%;
+}
+
+.menu-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Menu Links */
+.menu-content a {
+    text-decoration: none;
+    color: white;
+    padding: clamp(8px, 1.5vw, 14px) clamp(8px, 1.5vw, 12px);
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    display: block;
+}
+
+.menu-content a:last-child {
+    border-bottom: none;
+}
+
+.menu-content a:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    padding-left: clamp(16px, 3vw, 24px);
+}
+
+.menu-content a:active {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Contact Link (responsive sizing) */
+.menu-content a:first-child {
+    font-size: clamp(16px, 3vw, 28px);
+    font-weight: 600;
+    margin-bottom: clamp(4px, 1vw, 8px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: clamp(8px, 2vw, 16px);
+}
+
+/* Section Links (responsive sizing) */
+.menu-content a:not(:first-child) {
+    font-size: clamp(16px, 3vw, 28px);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.menu-content a:not(:first-child) p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Hover Effect Underline */
+.menu-content a::after {
+    content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-content a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Focus states for accessibility */
+.menu-content a:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 2px;
+}
+
+.close-button:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 2px;
 }
 .page{
     z-index: 100;
     background: rgba(0, 0, 0, 1);
+    will-change: transform;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+@theme {
+    --font-display: "Special Elite", sans-serif;
 }

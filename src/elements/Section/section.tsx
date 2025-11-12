@@ -2,18 +2,20 @@ import { useEffect, useState } from 'react';
 import "./section.css";
 import {Link} from "react-router-dom";
 import { Item } from '../../App';
+import { buildImageUrl, withBase } from '../../functions/index';
 
 interface MinigalleryProps {
     images: string[];
 }
+
 const Minigallery: React.FC<MinigalleryProps> = ({images}) => {
     return(
         <div className="p-12">
-            <div className="grid-container">{/*flex flex-row items-center p-12 h-72 */}
-                <img src={images[0]} loading='lazy' className="mini-gallery-image"/>
-                <img src={images[1]} loading='lazy' className="mini-gallery-image"/>
-                <img src={images[2]} loading='lazy' className="mini-gallery-image"/>
-                <img src={images[3]} loading='lazy' className="mini-gallery-image"/>
+            <div className="grid-container">
+                <img src={buildImageUrl(images[0], "_button")} loading='lazy' className="mini-gallery-image"/>
+                <img src={buildImageUrl(images[1], "_button")} loading='lazy' className="mini-gallery-image"/>
+                <img src={buildImageUrl(images[2], "_button")} loading='lazy' className="mini-gallery-image"/>
+                <img src={buildImageUrl(images[3], "_button")} loading='lazy' className="mini-gallery-image"/>
             </div>
         </div>
     )
@@ -21,7 +23,7 @@ const Minigallery: React.FC<MinigalleryProps> = ({images}) => {
 function Section() {
     const [data, setData] = useState<Item[]>([]);
     useEffect(()=>{
-        fetch('./secciones.json')
+    fetch(withBase('secciones.json'))
             .then((response) => {
                 if(!response.ok){
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -38,9 +40,9 @@ function Section() {
                <li key={index} className="content-center bg-black">
                    <Link to={`/${item.nombre}`}>
                        <div className="flex flex-col items-center">
-                           <img src={item.imagenes[1]} className="portada"/>
-                           <h2 className="text-white text-sm pt-2">{item.tipo}</h2>
-                           <h1 className="seccion-titulo">{item.nombre}</h1>
+                           <img src={withBase(item.portada)} className="portada" loading='eager'/>
+                           <h2 className="text-white text-sm pt-2 font-special-elite">{item.tipo}</h2>
+                           <h1 className="seccion-titulo font-special-elite">{item.nombre}</h1>
                            <Minigallery images={item.imagenes}/>
                        </div>
                    </Link>

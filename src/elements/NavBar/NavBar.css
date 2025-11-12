@@ -1,57 +1,245 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono');
-nav {
-    position: absolute; /* Use absolute positioning */
-    top: 0;
-    left: 0;
-    width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.02);
+  padding: clamp(12px, 2vw, 24px) 0;
+  width: 100%;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(8px, 2vw, 24px);
+}
+
+.nav-item {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+
+.nav-item-text {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item-underline {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Brand styling */
+.nav-brand .nav-item-text {
+  display: flex;
+  align-items: center;
+  font-size: clamp(16px, 3vw, 24px);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nav-logo {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+}
+
+.nav-initial {
+  transform: scaleX(-1) translateY(4px);
+  margin-right: clamp(0px, 0.1vw, 1px);
+  opacity: 0.9;
+  font-family: 'Special Elite';
+}
+
+.nav-name {
+  margin-left: clamp(0px, 0.1vw, 1px);
+  font-family: 'Special Elite';
+
+  /* Nudge down slightly to optically center with the logo */
+  transform: translateY(4px);
+}
+
+/* Contact link styling */
+.nav-contact .nav-item-text {
+  font-size: clamp(12px, 4vw, 16px);
+  font-weight: 500;
+}
+
+/* Menu button styling - hidden by default */
+.nav-menu-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1001;
+}
+
+.nav-menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: scale(1.04);
+}
+
+.nav-menu-btn:active {
+  transform: scale(0.96);
+}
+
+.menu-lines-wrapper {
+  width: 16px;
+  height: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-line {
+  width: 16px;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.menu-line-1 {
+  width: 12px;
+}
+
+.menu-line-2 {
+  width: 16px;
+}
+
+/* Hover states */
+.nav-item:hover .nav-item-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Active states */
+.nav-item:active .nav-item-text {
+  transform: scale(0.98);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-content {
+    padding: 0 clamp(6px, 2vw, 16px);
+  }
+  
+  .nav-brand .nav-item-text {
+    font-size: clamp(14px, 3.5vw, 20px);
+  }
+  
+  .nav-contact .nav-item-text {
+    font-size: clamp(11px, 2.5vw, 14px);
+  }
+}
+
+@media (max-width: 320px) {
+  .navbar-container {
+    padding: clamp(6px, 1.5vw, 12px) 0;
+  }
+  
+  .navbar-content {
+    padding: 0 clamp(4px, 1vw, 8px);
+  }
+  
+  .brand-name {
+    display: none;
+  }
+  
+  .brand-initial {
+    margin-right: 0;
+    font-size: clamp(16px, 4vw, 20px);
+  }
+  
+  /* Hide contact link on very small mobile */
+  .nav-contact {
+    display: none;
+  }
+  
+  /* Show menu button on very small mobile */
+  .nav-menu-btn {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    color: black;
-    z-index: 1000; /* Ensure it overlaps content */
+    width: clamp(32px, 8vw, 40px);
+    height: clamp(32px, 8vw, 40px);
+  }
+  
+  .menu-lines-wrapper {
+    width: clamp(12px, 3vw, 16px);
+    height: clamp(9px, 2.5vw, 12px);
+  }
+  
+  .menu-line {
+    width: clamp(12px, 3vw, 16px);
+    height: clamp(1.5px, 0.4vw, 2px);
+  }
+  
+  .menu-line-1 {
+    width: clamp(9px, 2.4vw, 12px);
+  }
 }
 
-nav .title {
-    font-size: 1.5rem;
-    margin: 1rem;
-    font-family: Oxygen mono;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    margin-top: 2rem;
-    margin-right: 4rem;
-    margin-left: 4rem;
-}
-nav .title2 {
-    font-size: 1rem;
-    margin: 1rem;
-    font-family: Oxygen mono;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    margin-top: 2rem;
-    margin-right: 4rem;
-    margin-left: 4rem;
-}
-nav .title3 {
-    font-size: 1rem;
-    margin: 1rem;
-    font-family: Oxygen mono;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    margin-top: 2rem;
-    margin-right: 4rem;
-    margin-left: 4rem;
-}
-
-nav .title:hover {
-    color: #ffffff;
-}
-
-nav .title2:hover {
-    color: #ffffff;
-}
-nav .title3:hover {
-    color: #ffffff;
+@media (max-width: 480px) and (min-width: 321px) {
+  /* Hide contact link on mobile but keep brand name visible */
+  .nav-contact {
+    display: none;
+  }
+  
+  /* Show menu button on mobile */
+  .nav-menu-btn {
+    display: flex;
+    width: clamp(32px, 8vw, 40px);
+    height: clamp(32px, 8vw, 40px);
+  }
+  
+  .menu-lines-wrapper {
+    width: clamp(12px, 3vw, 16px);
+    height: clamp(9px, 2.5vw, 12px);
+  }
+  
+  .menu-line {
+    width: clamp(12px, 3vw, 16px);
+    height: clamp(1.5px, 0.4vw, 2px);
+  }
+  
+  .menu-line-1 {
+    width: clamp(9px, 2.4vw, 12px);
+  }
 }

@@ -1,69 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk');
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla');
-.formInput{
-    display: flex;
-    flex-direction: column;
-    width: 280px;
+/* formInput.css */
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk'); /* Consider if needed - Tailwind might handle fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla');     /* Consider if needed */
+
+/* Overall form container styling - uses Tailwind in component for background/padding */
+.contact-form-container {
+    display: flex; /* Use flex to easily center the form */
+    justify-content: center; /* Center the form horizontally */
+    width: 100%;
 }
 
-input{
-    padding: 15px;
-    margin: 10px 0px;
-    height: 5rem;
-    background: rgba(255, 255, 255, 0) 100%;
+/* Styles the form element itself */
+.the-actual-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Takes full width of its container */
+    max-width: 500px; /* Max width for the form fields area */
+    padding: 1rem; /* Padding around the form elements */
+    box-sizing: border-box;
 }
-input text{
-    color: whitesmoke
+
+/* Styles the wrapper for each label + input group */
+.formInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Takes full width within .the-actual-form */
+    margin-bottom: 0.5rem; /* Space below each input group */
 }
-textarea{
-    padding: 15px;
-    margin: 10px 0px;
-    height: 5rem;
-    background: rgba(255, 255, 255, 0) 100%;
-}
-textarea:focus, input:focus{
-    color: whitesmoke;
-}
-textarea:out-of-range, input:out-of-range{
-    color: grey;
-}
-label{
-    font-size: 1rem;
+
+label {
+    font-size: 0.9rem; /* Slightly smaller */
     font-weight: bold;
-    color: whitesmoke;
-    padding-top: 2rem;
-    padding-left: 1rem;
+    color: whitesmoke; /* Keep as requested */
+    margin-bottom: 0.25rem; /* Space between label and input */
+    /* Removed large padding-top, handled by component structure or margins */
 }
 
-span{
-    font-size: 12px;
-    padding: 3px;
-    color: red;
-    display: none;
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px 12px; /* Adjusted padding */
+    margin: 0; /* Remove default margin if any */
+    background: rgba(255, 255, 255, 0.1); /* Slightly visible background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 4px; /* Slightly rounded corners */
+    width: 100%;
+    box-sizing: border-box;
+    color: whitesmoke; /* Text color */
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-input:invalid[focused="true"]{
-    border: 1px solid red;
-    border-radius: .2rem;
+textarea {
+    min-height: 100px; /* Use min-height instead of fixed height */
+    resize: vertical; /* Allow vertical resize */
 }
 
-input:invalid[focused="true"] ~ span{
-    display: block;
+/* Focus styles using CSS */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none; /* Remove default browser outline */
+    border-color: #34d399; /* Example: Tailwind's green-500 */
+    box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.4); /* Subtle glow on focus */
 }
 
-
-
-.format {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-.format2 {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: stretch;
-    position:relative;
-    width: 40vw;
+/* Styling for the base button state - specifics like border color, hover handled by Tailwind */
+.submit-button-base {
+    display: inline-block; /* Allows centering via text-align on parent */
+    width: auto; /* Let content determine width, or set max-width if needed */
+    min-width: 120px; /* Ensure minimum clickable area */
+    padding: 10px 20px; /* Padding inside button */
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px; /* Match input rounding */
+    /* Core text/bg colors and borders will be handled by Tailwind */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
+/* Container for the submit button to allow centering */
+.submit-button-container {
+    width: 100%;
+    text-align: center; /* Center the inline-block button */
+    margin-top: 1.5rem; /* Space above the button */
+}

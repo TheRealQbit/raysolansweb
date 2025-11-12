@@ -1,47 +1,27 @@
-import { useState } from "react";
 import "./popup.css";
 
 interface PopupProps {
-    image: string;
-    index: number;
+  image: string;
+  index: number;
+  onClick: (src: string) => void;
 }
-export default function Popup({ image, index }: PopupProps) {
-    const [Popup] = useState(false);
 
-    const togglePopup = () => {
-      
-    };
-    if(Popup) {
-        document.body.classList.add('active-Popup')
-      } else {
-        document.body.classList.remove('active-Popup')
-      }
-    
-      return (
-        <>
-          <img
-                key={index}
-                src={image}
-                loading='lazy'
-                className="object-cover p-5 max-h-screen w-fit h-full hover:p-2 transition-all"
-                onClick= {togglePopup}  />   
-    
-          {Popup && (
-            <div className="Popup">
-              <div onClick={togglePopup} className="overlay"></div>
-              <div className="Popup-content">
-              <img
-                key={index}
-                src={image}
-                loading='lazy'
-                className="object-cover p-5 w-fit"
-                onClick= {togglePopup}  /> 
-                <button className="close-Popup" onClick={togglePopup}>
-                  CLOSE
-                </button>
-              </div>
-            </div>
-          )}
-          </>
-      );
-}
+const Popup: React.FC<PopupProps> = ({ image, index, onClick }) => {
+  return (
+    <div className="group transition-all duration-300 ease-in-out hover:py-10 hover:px-4">
+      <img
+        src={image}
+        alt={`Gallery ${index}`}
+        className="cursor-pointer w-full h-auto object-cover rounded-sm transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-2xl group-hover:opacity-95"
+        style={{
+          transformOrigin: 'center center',
+          position: 'relative',
+          top: '0',
+          left: '0'
+        }}
+        onClick={() => onClick(image)}/>
+    </div>
+  );
+};
+
+export default Popup;

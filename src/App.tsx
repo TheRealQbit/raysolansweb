@@ -7,6 +7,7 @@ import SectionPage from "./pages/SectionPage";
 import Contacto from './pages/Contacto';
 import ScrollToTop from './elements/scrolltotop';
 import Biografia from './pages/Biografía';
+import { withBase } from './functions';
 export interface Item {
   nombre: string;
   tipo: string;
@@ -18,13 +19,14 @@ export interface Item {
   tipoGalería: Int8Array[];
   tags: string[];
   video: string;
+  portada: string;
 }
 function App() {
   const [data, setData] = useState([]);
   useEffect(()=>{
 
     // Cleanup function to restore the original style
-    fetch('./secciones.json')
+  fetch(withBase('secciones.json'))
         .then((response) => {
           if(!response.ok){
             throw new Error(`HTTP error! Status: ${response.status}`);

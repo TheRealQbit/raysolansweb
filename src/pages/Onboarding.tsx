@@ -2,17 +2,19 @@ import { useLayoutEffect , useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Gallery from '../elements/Gallery/gallery';
-import IGallery1 from '../../public/assets/RaySolans_Onboarding_IGallery_1.jpg';
-import IGallery2 from '../../public/assets/RaySolans_Onboarding_IGallery_2.jpg';
-import IGallery3 from '../../public/assets/RaySolans_Onboarding_IGallery_3.jpg';
 import { NavBar } from '../elements/NavBar/NavBar';
 import Section from "../elements/Section/section";
 import { Link } from "react-router-dom";
 import { Button } from '../elements/Button/Button';
 import { Item } from '../App';
+import Footer from '../elements/Footer/Footer';
+import { withBase } from '../functions';
+
+const images = import.meta.glob('../../public/assets/Onboarding/*.{png,jpg,jpeg,svg,js,ts,tsx}', { eager: true });
+
+const imgArray = Object.keys(images).map((file: string) => withBase(file.replace('../../public', '')));
 
 export default function Onboarding() {
-    const imgArray = [IGallery1, IGallery2, IGallery3];
     const comp = useRef(null);
     const page = useRef(null);
     const menu = useRef(null);
@@ -24,7 +26,7 @@ export default function Onboarding() {
 
     const [data, setData] = useState<Item[]>([]);
     useEffect(()=>{
-        fetch('./secciones.json')
+        fetch(withBase('secciones.json'))
             .then((response) => {
                 if(!response.ok){
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -35,24 +37,17 @@ export default function Onboarding() {
             .catch((error) => console.error('Error fetching data:', error));
     }, []);
     
-    useGSAP(() =>{
-        if(isMenuOpen){
-            gsap.to(page.current,{
-                x: 300,
-                duration: .8,
-                top: "-100%",
-                ease: "Power4.easeInOut",
-                
-            });
-        }else{
-            gsap.to(page.current,{
-                x: 0,
-                duration: .8,
-                top: "-100%",
-                ease: "Power4.easeInOut",
-            });
-        }    
-    },[isMenuOpen]);
+    useGSAP(() => {
+        const tl = gsap.timeline({ defaults: { duration: 0.8, ease: "Power4.easeInOut" } });
+    
+        if (isMenuOpen) {
+            tl.to(page.current, { x: 300 })  
+              .to(menu.current, { x: 0, opacity: 1 }, "-=0.4"); 
+        } else {
+            tl.to(menu.current, { x: -100, opacity: 0 })
+              .to(page.current, { x: 0 }, "-=0.4");
+        }
+    }, [isMenuOpen]);
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const t1 = gsap.timeline()
@@ -112,53 +107,54 @@ export default function Onboarding() {
         return() => ctx.revert()
     }, [])
     return (
-            <div className=' relative w-screen' ref={comp} >
-                <div className='loading-container'>
-                    <div className='loading-screen' id="loading-screen">
-                        <div className='flex flex-row gap-5 items-center'>
-                            <text className='r'>R</text>
-                            <text className='loading-words'>ay Solans</text>
-                        </div>
-                        <div className='rounded-div-wrap top'>
-                            <div className='rounded-div'></div>                                
-                        </div>
-                        <div className='rounded-div-wrap bottom'>
-                            <div className='rounded-div'></div>
-                        </div>
+            <div className='bg-black w-screen' ref={comp}>
+            <div className="loading-container h-screen flex justify-center items-center">
+                <div className="loading-screen">
+                    <div className="flex flex-row items-center p">
+                        <text className="r">R</text>
+                        <text className="loading-words">ay Solans</text>
+                    </div>
+                    <div className="rounded-div-wrap top">
+                        <div className="rounded-div"></div>
+                    </div>
+                    <div className="rounded-div-wrap bottom">
+                        <div className="rounded-div"></div>
                     </div>
                 </div>
+            </div>
                 <Button onClick={toggleMenu} isMenuOpen={isMenuOpen} />
                 <div id="Page" className="page" ref={page}>
                     <NavBar />
                     <div className='gradient'/>
                     <Gallery imgArray={imgArray}/>
-                    <div className='flex flex-col items-left w-screen'>
-                        <div className='bg-black pt-10 pl-20'>
-                            <div className='flex flex-col justify-center'>
-                                <text className='text-white text-9xl font-bold'>
+                    <div className="flex flex-col items-start w-screen">
+                        <div className="bg-black pt-12 pl-10 md:pl-20">
+                            <div className="flex flex-col justify-center">
+                                <p className="text-white hero-heading-large font-bold font-special-elite">
                                     IMÁGENES
-                                </text><div className="w-full h-0.5 bg-white-500 my-4"></div>
-                                <text className='text-white text-4xl'>
+                                </p>
+                                <p className="text-white hero-heading-small font-special-elite">
                                     que
-                                </text>
-                                <text className='text-white text-9xl font-bold'>
+                                </p>
+                                <p className="text-white hero-heading-large font-special-elite">
                                     TRANSCIENDEN
-                                </text>
+                                </p>
                             </div>
                         </div>
                     </div>
                     <Section/>
+                    <Footer />
                 </div>
                 <div className={`side-menu ${isMenuOpen ? 'open' : ''}`} ref={menu}>
                     <button className="close-button" onClick={toggleMenu}>
                     &times;
                     </button>
-                    <div className="menu-content" ref={menu}> 
-                        <Link to="/contact" className="text-white text-xl">
+                    <div className="menu-content"> 
+                        <Link to="/contact" className="text-white">
                             Contacto
                         </Link>
                         {data.map((item) =>(
-                            <Link to={`/${item.nombre}`} className='text-white text-9xl'>
+                            <Link to={`/${item.nombre}`} className='text-white'>
                                 <p>{item.nombre}</p>
                             </Link>
                             ))}
