@@ -8,6 +8,7 @@ import Footer from '../elements/Footer/Footer';
 import { Button } from '../elements/Button/Button';
 import { useGSAP } from '@gsap/react';
 import { Link } from "react-router-dom";
+import { SEO } from '../components/SEO';
 
 
 const SectionGallery = ({video, imagenes,nombre} :Item) => {
@@ -34,18 +35,24 @@ const SectionGallery = ({video, imagenes,nombre} :Item) => {
     
     if(video != '') {
         console.log(video)
-        return(<video autoPlay loop muted className='main-section-image'>
+        return(<video autoPlay loop muted className='main-section-image' preload="metadata">
             <source src={withBase(video)} type='video/mp4'/>
         </video>)
-        
+
     } else{
         let random = Math.random() * (imagenes.length - 1)
         random = Math.floor(random)
         return(
-            <div className='relative'>          
-                <img src={withBase(imagenes[random])} alt='gallery' loading='eager' className='h-[80vh] object-cover w-screen'/>
-                <h1 
-                    className='absolute inset-x-0 bottom-4 md:bottom-10 text-center text-white font-bold text-2xl font-special-elite sm:text-4xl md:text-6xl lg:text-8xl z-10 px-4' 
+            <div className='relative'>
+                <img
+                    src={withBase(imagenes[random])}
+                    alt={`${nombre} - Ray Solans Photography Portfolio`}
+                    loading='eager'
+                    fetchPriority='high'
+                    className='h-[80vh] object-cover w-screen'
+                />
+                <h1
+                    className='absolute inset-x-0 bottom-4 md:bottom-10 text-center text-white font-bold text-2xl font-special-elite sm:text-4xl md:text-6xl lg:text-8xl z-10 px-4'
                     style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}
                     ref={name}
                 >
@@ -57,7 +64,7 @@ const SectionGallery = ({video, imagenes,nombre} :Item) => {
                 <div className='absolute inset-0 bg-black bg-opacity-20'></div>
             </div>
         )
-        
+
     }
 }
 export default function SectionPage(props:Item) {
@@ -142,6 +149,13 @@ export default function SectionPage(props:Item) {
     }, [])
     return(
         <div className='bg-black w-screen' ref={comp}>
+            <SEO
+                title={`${props.nombre} - Ray Solans Photography`}
+                description={props.descripcion}
+                image={`https://raysolans.com${props.portada}`}
+                url={`https://raysolans.com/#/${encodeURIComponent(props.nombre)}`}
+                keywords={`${props.nombre}, ${props.tipo}, Ray Solans, fotografía, ${props.tags.join(', ')}`}
+            />
             <div className="loading-container h-screen flex justify-center items-center">
                 <div className="loading-screen">
                     <div className="flex flex-row items-center p">
@@ -162,7 +176,7 @@ export default function SectionPage(props:Item) {
                 <div className='gradient'/>
                 <SectionGallery {...props}/>
                 <div className='flex flex-col items-stretch relative bg-black'>
-                        <h1 className='text-white p-0 pl-[10vw] pt-8 pr-[10vw] pb-[10vh] text-l font-special-elite sm:text-2xl md:text-3xl text-left w-full overflow-visible whitespace-normal'>{props.descripcion}</h1>
+                        <h1 className='text-white p-0 px-6 sm:px-10 md:px-16 lg:px-20 pt-8 pb-[10vh] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-special-elite text-left w-full overflow-visible whitespace-normal leading-relaxed'>{props.descripcion}</h1>
                         <Display images={props.imagenes.map((p) => withBase(p))}/>
                 </div>  
         <Footer />

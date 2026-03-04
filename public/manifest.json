@@ -1,0 +1,27 @@
+{
+  "name": "Ray Solans Photography",
+  "short_name": "RaySolans",
+  "description": "Portfolio de fotografía profesional de Ray Solans. Especializado en retratos, moda, y fotografía documental.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/dark-theme-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "photography",
+    "portfolio",
+    "art"
+  ],
+  "lang": "es",
+  "dir": "ltr",
+  "scope": "/",
+  "screenshots": []
+}

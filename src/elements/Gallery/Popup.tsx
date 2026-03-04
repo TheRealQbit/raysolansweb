@@ -11,7 +11,8 @@ const Popup: React.FC<PopupProps> = ({ image, index, onClick }) => {
     <div className="group transition-all duration-300 ease-in-out hover:py-10 hover:px-4">
       <img
         src={image}
-        alt={`Gallery ${index}`}
+        alt={`Ray Solans Photography - Gallery Image ${index + 1}`}
+        loading="lazy"
         className="cursor-pointer w-full h-auto object-cover rounded-sm transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-2xl group-hover:opacity-95"
         style={{
           transformOrigin: 'center center',

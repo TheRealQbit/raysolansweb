@@ -1,14 +1,24 @@
 import { withBase } from '../../functions';
+import { useMemo } from 'react';
 
 interface GalleryProps {
     imgArray: string[];
 }
 const Gallery = ({imgArray}:GalleryProps) => {
-    let random = Math.random() * (imgArray.length - 1)
-        random = Math.floor(random)
+    const randomImage = useMemo(() => {
+        const random = Math.floor(Math.random() * imgArray.length);
+        return imgArray[random];
+    }, [imgArray]);
+
     return (
-        <div className=''>          
-            <img src={withBase(imgArray[random])} alt='gallery' loading='eager'className='h-screen object-cover w-screen'/>
+        <div className=''>
+            <img
+                src={withBase(randomImage)}
+                alt='Ray Solans Photography - Portfolio Hero Image'
+                loading='eager'
+                className='h-screen object-cover w-screen'
+                fetchPriority='high'
+            />
             <div className='h-screen w-screen absolute'>
             </div>
         </div>

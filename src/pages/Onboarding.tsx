@@ -9,6 +9,7 @@ import { Button } from '../elements/Button/Button';
 import { Item } from '../App';
 import Footer from '../elements/Footer/Footer';
 import { withBase } from '../functions';
+import { SEO } from '../components/SEO';
 
 const images = import.meta.glob('../../public/assets/Onboarding/*.{png,jpg,jpeg,svg,js,ts,tsx}', { eager: true });
 
@@ -108,6 +109,7 @@ export default function Onboarding() {
     }, [])
     return (
             <div className='bg-black w-screen' ref={comp}>
+            <SEO />
             <div className="loading-container h-screen flex justify-center items-center">
                 <div className="loading-screen">
                     <div className="flex flex-row items-center p">

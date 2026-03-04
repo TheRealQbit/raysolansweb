@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://raysolans.com/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Biography Page -->
+  <url>
+    <loc>https://raysolans.com/#/bio</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://raysolans.com/#/contact</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Afrika Bambata Portfolio -->
+  <url>
+    <loc>https://raysolans.com/#/Afrika%20Bambata</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raysolans.com/assets/AFRIKA%20BAMBATA/africa_bambata_3.jpg</image:loc>
+      <image:title>Afrika Bambata - Retratos</image:title>
+      <image:caption>Africa Subsahariana, retratos del pueblo Masai en Tanganika</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Havana Vella Portfolio -->
+  <url>
+    <loc>https://raysolans.com/#/Havana%20Vella</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raysolans.com/assets/HAVANA%20VELLA/havana_vella_2.jpeg</image:loc>
+      <image:title>Havana Vella</image:title>
+      <image:caption>La Habana Vieja - Fotografía documental en Cuba</image:caption>
+    </image:image>
+  </url>
+
+  <!-- On The Beach Portfolio -->
+  <url>
+    <loc>https://raysolans.com/#/ON%20THE%20BEACH</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raysolans.com/assets/ON%20THE%20BEACH/on_the_beach_8.jpg</image:loc>
+      <image:title>On The Beach</image:title>
+      <image:caption>Fotografía de playa</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Tentoria Spectrum Portfolio -->
+  <url>
+    <loc>https://raysolans.com/#/TENTORIA%20SPECTRUM</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raysolans.com/assets/TENTORIA%20SPECTRUM/LA%20PELONA.jpg</image:loc>
+      <image:title>Tentoria Spectrum</image:title>
+      <image:caption>Fotografía conceptual y artística</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Style & Fashion Portfolio -->
+  <url>
+    <loc>https://raysolans.com/#/STYLE%20%26%20FASHION</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raysolans.com/assets/STYLE%20%26%20FASHION/style_2.jpeg</image:loc>
+      <image:title>Style & Fashion</image:title>
+      <image:caption>Fotografía de moda y estilo</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Porcelana (China) Portfolio -->
+  <url>
+    <loc>https://raysolans.com/#/%E4%B8%AD%E5%9B%BD</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://raysolans.com/assets/porcelana/porcelana_4.jpeg</image:loc>
+      <image:title>中国 - Porcelana</image:title>
+      <image:caption>Fotografía en China</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

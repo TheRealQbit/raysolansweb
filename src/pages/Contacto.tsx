@@ -7,6 +7,7 @@ import Contact from '../elements/Forms/Forms';
 import LoadingContainer from '../elements/loadingContainer';
 import Footer from '../elements/Footer/Footer';
 import { AnimatedBrand } from '../elements/AnimatedBrand/AnimatedBrand';
+import { SEO } from '../components/SEO';
 
 export default function Contacto() {
     const comp = useRef(null);
@@ -84,6 +85,12 @@ export default function Contacto() {
     }, [])
     return (
         <div className='relative w-screen' ref={comp} >
+            <SEO
+                title="Contacto - Ray Solans Photography"
+                description="Ponte en contacto con Ray Solans para tus proyectos de fotografía profesional. Retratos, moda, fotografía documental y más."
+                url="https://raysolans.com/#/contact"
+                keywords="contacto, Ray Solans, fotógrafo, contratar fotógrafo, fotografía profesional"
+            />
             <LoadingContainer text='Contacto'/>
             <div id="Page" className="page">
                 <NavBar />
@@ -93,8 +100,8 @@ export default function Contacto() {
                 <div className='gradient'/>
                 <div className='h-screen'>                    
                     <div className='flex flex-col items-end '>
-                        <img loading='eager' src={withBase('/assets/Ray/bg.png')} alt='bg' className='ray-image-background'/>
-                        <img loading='eager' src={withBase('/assets/Ray/Subject.png')} alt='subject' className='ray-image-subject'/>
+                        <img loading='lazy' src={withBase('/assets/Ray/bg.png')} alt='Ray Solans - Contact Background' className='ray-image-background'/>
+                        <img loading='eager' src={withBase('/assets/Ray/Subject.png')} alt='Ray Solans - Portrait' className='ray-image-subject' fetchPriority='high'/>
                     </div>
                     <h1 className='contact-form-text'>Trabajemos</h1>
                     <div className='contact-form'>
